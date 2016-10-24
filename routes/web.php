@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('tutores','TutoresController');
+Route::resource('alumnos','AlumnosController');
+Route::resource('calificaciones','CalificacionesController');
+Route::resource('materias','MateriasController');
+Route::resource('grupos','GruposController');
+Route::resource('profesores','ProfesoresController');
+Route::resource('aulas','AulasController');
+Route::resource('horas','HorasController');
+Route::resource('especialidades','EspecialidadesController');

@@ -34,7 +34,7 @@ class CreateProfesoresTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('ascesor', function (Blueprint $table) {
+        Schema::create('ascesores', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('grupo_id')->unsigned();
             $table->integer('profesor_id')->unsigned();
@@ -42,11 +42,15 @@ class CreateProfesoresTable extends Migration
             $table->foreign('profesor_id')->references('id')->on('profesores')->onDelete('cascade');
             $table->timestamps();
         });
-        Schema::create('calificacion', function (Blueprint $table) {
+        Schema::create('calificaciones', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('alumno_id')->unsigned();
             $table->integer('materia_id')->unsigned();
             $table->integer('profesor_id')->unsigned();
+            $table->float('parcial1',2,2)->nullable();
+            $table->float('parcial2',2,2)->nullable();
+            $table->float('parcial3',2,2)->nullable();
+            $table->float('promedio',2,2)->nullable();
             $table->foreign('alumno_id')->references('id')->on('alumnos')->onDelete('cascade');
             $table->foreign('materia_id')->references('id')->on('materias')->onDelete('cascade');
             $table->foreign('profesor_id')->references('id')->on('profesores')->onDelete('cascade');

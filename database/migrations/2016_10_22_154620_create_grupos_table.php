@@ -15,9 +15,11 @@ class CreateGruposTable extends Migration
     {
         Schema::create('grupos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('profesor_id');
+            $table->string('nombre');
+            $table->integer('especialidad_id')->unsigned();
             $table->enum('semestre',['1','2','3','4','5','6']);
             $table->enum('turno',['matutino','vespertino']);
+            $table->foreign('especialidad_id')->references('id')->on('especialidades')->onDelete('cascade');
             $table->timestamps();
         });
 
@@ -25,7 +27,6 @@ class CreateGruposTable extends Migration
             $table->increments('id');
             $table->integer('alumno_id')->unsigned();
             $table->integer('grupo_id')->unsigned();
-            $table->string('nombre');
             $table->foreign('alumno_id')->references('id')->on('alumnos')->onDelete('cascade');
             $table->foreign('grupo_id')->references('id')->on('grupos')->onDelete('cascade');
             $table->timestamps();

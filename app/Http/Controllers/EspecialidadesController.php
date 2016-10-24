@@ -46,7 +46,7 @@ class EspecialidadesController extends Controller
     public function store(Request $request)
     {
         //Creamos un prodcuto nuevo con el modelo Especialidad y lo rellenamos con los datos que ingresa el usuario
-        $producto = new Especialidad($request->all());
+        $especialidad = new Especialidad($request->all());
         //Mandamos a guaradar la nueva especialidad creada
         $especialidad->save();
         //Redireccionamos al index
