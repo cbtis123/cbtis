@@ -17,7 +17,5 @@ class Tutor extends Model
 
 
      //Se de clara relacion muchos a muchos con materias, llamando al modelo Materia 
-     public function materias(){
-     	return $this->belongsToMany(App\Materia);
-     }
+     
 }
