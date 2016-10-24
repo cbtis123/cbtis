@@ -30,7 +30,9 @@ class CreateTutoresTable extends Migration
             $table->integer('cp');
             $table->string('telefono_c');
             $table->string('celular');
-            
+            $table->integer('alumno_id')->unsigned();
+
+            $table->foreign('alumno_id')->references('id')->on('alumnos')->onDelete('cascade');
             $table->timestamps();
 
         });

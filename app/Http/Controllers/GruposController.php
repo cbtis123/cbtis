@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Grupo;
 use App\Http\Requests;
 
 class GruposController extends Controller

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Especialidad;
 use App\Http\Requests;
 
 //Se manda llamar los modelos que vamos a usar en el controlador

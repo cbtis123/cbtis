@@ -30,12 +30,10 @@ class CreateAlumnosTable extends Migration
             $table->integer('cp');
             $table->string('telefono_c');
             $table->string('celular');
-            $table->integer('tutor_id')->unsigned();
             $table->integer('especialidad_id')->unsigned();
             $table->enum('semestre',['1','2','3','4','5','6']);
             $table->enum('turno',['matutino','vespertino']);
 
-            $table->foreign('tutor_id')->references('id')->on('tutores')->onDelete('cascade');
             $table->foreign('especialidad_id')->references('id')->on('especialidades')->onDelete('cascade');
             $table->timestamps();
         
