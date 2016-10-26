@@ -25,17 +25,17 @@ class Aula extends Model
 
     //Se declara la relacion de muchos a muchos con Materia "Una aula puede tener muchas Materias"
     public function materias(){
-    	return $this->hasManyThrought('App\Materia','App\Horario')
+    	return $this->hasManyThrought('App\Materia','App\Horario');
     }
 
     //Se declara la relacion de muchos a muchos con Grupos "Una aula puede tener muchos grupos"
     public function grupos(){
-    	return $this->hasManyThrought('App\Grupo','App\Horario')
+    	return $this->hasManyThrought('App\Grupo','App\Horario');
     }
 
     //Se declara la relacion de muchos a muchos con Profesores "Una aula puede tener muchos profesores"
     public function profesores(){
-    	return $this->hasManyThrought('App\Profesor','App\Horario')
+    	return $this->hasManyThrought('App\Profesor','App\Horario');
     }
 
 }

@@ -16,16 +16,16 @@ class Calificacion extends Model
 
     //Se de clara relacion muchos a muchos con materias, llamando al modelo Materia 
 	public function alumno(){
-		return $this->belongsTo('App\Alumno')
+		return $this->belongsTo('App\Alumno');
 	}     
 
 	//Se declara la relacion uno a uno con reticulas "Solo se puede tener una calificaion de una materia por reticula"
 	public function reticula(){
-		return $this->belongsTo('App\Reticula')
+		return $this->belongsTo('App\Reticula');
 	}
 
 	//Se declara la relacion muchos a uno con horarios "Una calificacion solo puede tener un horario "
 	public function horario(){
-		return $this->belongsTo('App\Profesor')
+		return $this->belongsTo('App\Profesor');
 	}
  }

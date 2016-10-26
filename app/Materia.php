@@ -32,16 +32,16 @@ class Materia extends Model
 
     //Se declara la relacion de muchos a muchos con Materias "Una materia puede tener muchas Horas"
     public function horas(){
-    	return $this->hasManyThrought('App\Hora','App\Horario')
+    	return $this->hasManyThrought('App\Hora','App\Horario');
     }
 
     //Se declara la relacion de muchos a muchos con Grupos "Una materia puede tener muchos grupos"
     public function grupos(){
-    	return $this->hasManyThrought('App\Grupo','App\Horario')
+    	return $this->hasManyThrought('App\Grupo','App\Horario');
     }
 
     //Se declara la relacion de uno a muchos con Calificaiones "Una materia puede tener muchas calificaciones"
     public function calificaciones(){
-    	return $this->hasManyThrought('App\Calificacion','App\Horario')
+    	return $this->hasManyThrought('App\Calificacion','App\Horario');
     }
 }

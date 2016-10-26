@@ -25,11 +25,11 @@ class Hora extends Model
 
     //Se declara la relacion de muchos a muchos con Materias "Una hora puede tener muchas Materias"
     public function materias(){
-    	return $this->hasManyThrought('App\Materia','App\Horario')
+    	return $this->hasManyThrought('App\Materia','App\Horario');
     }
 
     //Se declara la relacion de muchos a muchos con Grupos "Una hora puede tener muchos grupos"
     public function grupos(){
-    	return $this->hasManyThrought('App\Grupo','App\Horario')
+    	return $this->hasManyThrought('App\Grupo','App\Horario');
     }
 }

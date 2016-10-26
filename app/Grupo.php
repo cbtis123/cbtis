@@ -18,37 +18,37 @@ class Grupo extends Model
 
      //Se declara relacion uno a muchos con grupos "Un grupo solo puede tener profesor como tutor "
     public function tutor(){
-        return $this->belongsTo('App\Profesor')
+        return $this->belongsTo('App\Profesor');
     }
 
      //Se declara relacion uno a muchos con grupos "Un grupo solo puede tener una especialidad "
     public function especialidad(){
-        return $this->belongsTo('App\Especialidad')
+        return $this->belongsTo('App\Especialidad');
     }
 
     //Se declara relacion muchos a muchos con grupos "Un grupo puede tener muchos alumnos"
     public function alumnos(){
-        return $this->hasMany('App\Alumno')
+        return $this->hasMany('App\Alumno');
     }
 
     //Se declara relacion muchos a muchos con grupos "Un grupo puede tener muchos horarios"
     public function horarios(){
-        return $this->hasMany('App\Horario')
+        return $this->hasMany('App\Horario');
     }
 
     //Se declara relacion muchos a muchos con grupos "Un grupo puede tener muchas aulas"
     public function aulas(){
-        return $this->hasManyThrought('App\Aula','App\Horario')
+        return $this->hasManyThrought('App\Aula','App\Horario');
     }
 
     //Se declara relacion muchos a muchos con grupos "Un grupo puede tener muchas horas"
     public function horas(){
-        return $this->hasManyThrought('App\Hora','App\Horario')
+        return $this->hasManyThrought('App\Hora','App\Horario');
     }
 
     //Se declara relacion muchos a muchos con Materias "Un grupo puede tener muchas materias"
     public function materias(){
-        return $this->hasManyThrought('App\Materia','App\Horario')
+        return $this->hasManyThrought('App\Materia','App\Horario');
     }
 
     //Se declara relacion muchos a muchos con  Profesores "Un grupo puede tener muchos profesores" 

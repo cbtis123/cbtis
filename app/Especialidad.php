@@ -23,11 +23,11 @@ class Especialidad extends Model
 
      //Se declara la relacion uno a muchos "Una especialidad puede tener muchos alumnos"
      public function alumnos(){
-        return $this->hasMany('App\Alumno')
+        return $this->hasMany('App\Alumno');
      }
 
     //Se declara la relacion uno a muchos "Una especialidad puede tener muchos grupos"
      public function grupos(){
-        return $this->hasMany('App\Grupo')
+        return $this->hasMany('App\Grupo');
      }     
 }
