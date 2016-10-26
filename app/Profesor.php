@@ -20,10 +20,6 @@ class Profesor extends Model
         return $this->hasMany('App\Calificacion');
     }
 
-    //Se declara relacion muchos a muchos con Grupos "Un profesor puede ser asesor de muchos grupos" 
-    public function grupos(){
-        return $this->hasMany('App\Grupo');
-    }
 
     //Se declara relacion muchos a muchos con Alumnos "Un profesor puede asignar muchas calificaciones" 
     public function alumnos(){
