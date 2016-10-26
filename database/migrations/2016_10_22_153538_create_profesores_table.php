@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAlumnosTable extends Migration
+class CreateProfesoresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateAlumnosTable extends Migration
      */
     public function up()
     {
-        Schema::create('alumnos', function (Blueprint $table) {
+        Schema::create('profesores', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
             $table->string('apellido_p');
             $table->string('apellido_m');
             $table->dateTime('fecha_n');
             $table->string('curp');
+            $table->integer('horas');
             $table->string('estado_c');
             $table->integer('clave_en');
             $table->integer('clave_mn');
@@ -30,14 +31,11 @@ class CreateAlumnosTable extends Migration
             $table->integer('cp');
             $table->string('telefono_c');
             $table->string('celular');
-            $table->integer('especialidad_id')->unsigned();
-            $table->enum('semestre',['1','2','3','4','5','6']);
-            $table->enum('turno',['matutino','vespertino']);
-
-            $table->foreign('especialidad_id')->references('id')->on('especialidades')->onDelete('cascade');
             $table->timestamps();
-        
         });
+
+        
+        
     }
 
     /**
@@ -47,6 +45,6 @@ class CreateAlumnosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('alumnos');
+        Schema::dropIfExists('profesores');
     }
 }

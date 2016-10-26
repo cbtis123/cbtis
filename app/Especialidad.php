@@ -16,8 +16,18 @@ class Especialidad extends Model
     */
 
 
-     //Se de clara relacion muchos a muchos con materias, llamando al modelo Materia 
+     //Se declara la relacion muchos a muchos con materias "Una especialidad puede tener muchas materias"
      public function materias(){
-     	return $this->belongsToMany(App\Materia);
+     	return $this->belongsToMany('App\Materia','especialidad_materia');
      }
+
+     //Se declara la relacion uno a muchos "Una especialidad puede tener muchos alumnos"
+     public function alumnos(){
+        return $this->hasMany('App\Alumno')
+     }
+
+    //Se declara la relacion uno a muchos "Una especialidad puede tener muchos grupos"
+     public function grupos(){
+        return $this->hasMany('App\Grupo')
+     }     
 }
