@@ -15,11 +15,11 @@ class CreateHorariosTable extends Migration
     {
         Schema::create('horarios', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('aula_id')->unsigned();
-            $table->integer('grupo_id')->unsigned();
-            $table->integer('hora_id')->unsigned();
-            $table->integer('materia_id')->unsigned();
-            $table->integer('profesor_id')->unsigned();
+            $table->integer('aula_id')->unsigned()->nullable();
+            $table->integer('grupo_id')->unsigned()->nullable();
+            $table->integer('hora_id')->unsigned()->nullable();
+            $table->integer('materia_id')->unsigned()->nullable();
+            $table->integer('profesor_id')->unsigned()->nullable();
 
             $table->foreign('aula_id')->references('id')->on('aulas')->onDelete('cascade');
             $table->foreign('grupo_id')->references('id')->on('grupos')->onDelete('cascade');

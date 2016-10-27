@@ -1,5 +1,7 @@
 <?php
 
+use App\Alumno;
+use Faker\Generator;
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -12,13 +14,24 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
-    static $password;
-
-    return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
-    ];
+$factory->define(Alumno::class, function(Generator $faker){
+	$array = [
+			'nombre' => $faker->firstName($gender = 'male'|'female'),
+            'apellido_p' => $faker->lastname,
+            'apellido_m' => $faker->lastname,
+            'fecha_n' => $faker->date($format = 'y-m-d', $max = 'now') ,
+            'curp' => $faker->shuffle('ASDF').$faker->shuffle('19823456'),
+            'estado_c' => $faker->randomElement($array = array ('Soltero','Casado')),
+            'clave_en' => $faker->ean8,
+            'clave_mn' => $faker->ean8,
+            'clave_mv' => $faker->ean8,
+            'clave_lv' => $faker->ean8,
+            'colonia' => $faker->randomElement($array = array ('Centro','Reforma','San martin','5 senores','Aurora','San Felipe','La noria')),
+            'calle' => $faker->randomElement($array = array ('Murgia','Abasolo','Colon','Independencia','Hidalgo','Guerrero','5 de mayo')).' '.$faker->numberBetween($min = 90, $max = 500),
+            'cp' => $faker->numberBetween($min = 60000, $max = 70000),
+            'telefono_c' =>$faker->tollFreePhoneNumber ,
+            'celular' => $faker->tollFreePhoneNumber,
+            'semestre' => $faker->numberBetween($min = 1, $max = 6)
+	];
+	return $array;
 });

@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Materia;
 use App\Http\Requests;
+use App\Http\Requests\MateriaRequest;
 
 class MateriasController extends Controller
 {
     public function index()
     {
         //Se manda a llamar todas las materias que existen en la tabla 'materias' mediante el modelo materia
-        $materias = Materia::all();
+        $materias = Materia::orderBy('id','ASC')->paginate(10);
         //Se manda a llamar la vista index y le pasamos la lista de usuarios que obtuvimos mediante el modelo materia
         return view('materias.index')->with('materias',$materias);
     }
@@ -35,7 +36,7 @@ class MateriasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MateriaRequest $request)
     {
         //Creamos un prodcuto nuevo con el modelo materia y lo rellenamos con los datos que ingresa el usuario
         $materia = new Materia($request->all());
@@ -79,6 +80,11 @@ class MateriasController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //Declaramos las validaciones
+        $this->validate($request, [
+            'nombre' => 'required|unique:materias,nombre,'."$id"
+            ]);
+
         //Buscamos la materia que vamos a asignar los nuevos valores con el modelo materia y find
         $materia= Materia::find($id);
         //Vaciamos los atributos modificados con fill al registro ya existente

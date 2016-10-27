@@ -18,7 +18,7 @@ class CreateAlumnosTable extends Migration
             $table->string('nombre');
             $table->string('apellido_p');
             $table->string('apellido_m');
-            $table->dateTime('fecha_n');
+            $table->date('fecha_n');
             $table->string('curp');
             $table->string('estado_c');
             $table->integer('clave_en');
@@ -30,10 +30,10 @@ class CreateAlumnosTable extends Migration
             $table->integer('cp');
             $table->string('telefono_c');
             $table->string('celular');
-            $table->integer('especialidad_id')->unsigned();
+            $table->integer('especialidad_id')->unsigned()->nullable();
             $table->enum('semestre',['1','2','3','4','5','6']);
-            $table->integer('grupo_id')->unsigned();
-            $table->enum('status',['regular','resagado']);
+            $table->integer('grupo_id')->unsigned()->nullable();
+            $table->enum('status',['regular','resagado'])->default('regular');
 
             $table->foreign('especialidad_id')->references('id')->on('especialidades')->onDelete('cascade');
             $table->foreign('grupo_id')->references('id')->on('grupos')->onDelete('cascade');

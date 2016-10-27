@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Alumno;
 use App\Http\Requests;
+use App\Http\Requests\AlumnoRequest;
 
 class AlumnosController extends Controller
 {
@@ -36,7 +37,7 @@ class AlumnosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AlumnoRequest $request)
     {
         //Creamos un prodcuto nuevo con el modelo alumno y lo rellenamos con los datos que ingresa el usuario
         $alumno = new Alumno($request->all());
@@ -78,7 +79,7 @@ class AlumnosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AlumnoRequest $request, $id)
     {
         //Buscamos la alumno que vamos a asignar los nuevos valores con el modelo alumno y find
         $alumno= Alumno::find($id);
