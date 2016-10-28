@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Grupo;
+use App\Especialidad;
+use App\Profesor;
 use App\Http\Requests;
 
 class GruposController extends Controller
@@ -24,10 +26,12 @@ class GruposController extends Controller
      */
     public function create()
     {
+        $especialidades= Especialidad::orderBy('nombre','ASC')->pluck('nombre','id');
+        $profesores=Profesor::orderBy('nombre', 'ASC')->pluck('nombre','id');
         //Se crea un objeto vacio del modelo grupo
         $grupo= new Grupo;
         //Se manda a llamar la vista create y le pasamos el objeto vacio que creamos con el modelo grupo
-        return view('grupos.create')->with('grupo',$grupo);
+        return view('grupos.create')->with('grupo',$grupo)->with('especialidades',$especialidades)->with('profesores',$profesores);
     }
 
     /**

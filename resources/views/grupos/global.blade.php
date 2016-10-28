@@ -5,19 +5,19 @@
   </div>
   <div class='group'>
      {!!Form::label('especialidad_id','especialidad_id')!!}
-     {!!Form::text('especialidad_id',$grupo->especialidad_id,['class'=>'form-control','placeholder'=>'nombre'])!!}
+     {!!Form::select('especialidad_id',$especialidades,['class'=>'form-control','placeholder'=>'nombre'])!!}
   </div>
   <div class='group'>
      {!!Form::label('profesor_id','profesor_profesor_id')!!}
-     {!!Form::text('profesor_id',$grupo->profesor_id,['class'=>'form-control','placeholder'=>'nombre'])!!}
+     {!!Form::select('profesor_id',$profesores,['class'=>'form-control','placeholder'=>'nombre'])!!}
   </div>
   <div class='group'>
      {!!Form::label('semestre','semestre')!!}
-     {!!Form::text('semestre',$grupo->semestre,['class'=>'form-control','placeholder'=>'nombre'])!!}
+     {!!Form::select('semestre',array('1' => '1', '2' => '2','3' => '3','4' => '4', '5' => '5', '6' => '6'),$grupo->semestre,['class'=>'form-control','placeholder'=>'nombre'])!!}
   </div>
   <div class='group'>
      {!!Form::label('turno','turno')!!}
-     {!!Form::text('turno',$grupo->turno,['class'=>'form-control','placeholder'=>'nombre'])!!}
+     {!!Form::select('turno',array('1' => 'matutino', '2' => 'vespertino'),['class'=>'form-control','placeholder'=>'nombre'])!!}
   </div>
 
   <div class='group'>
