@@ -1,6 +1,7 @@
 @extends('layouts.cabecera')
 @section('content')
   <div class='container'>
-    @include('materias.global',['ruta'=>'materias.store','accion'=>'POST','materia'=>$materia])
+    @include('horarios.global',['ruta'=>'horario.store','accion'=>'POST','horario'=>$horario])
+
   </div>
 @endsection('content')

@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.cabecera')
 @section('content')
   <div class='container'>
-    @include('aulas.global',['ruta'=>'aulas.create','accion'=>'POST','aula'=>$aula])
+    @include('aulas.global',['ruta'=>'aulas.store','accion'=>'POST','aula'=>$aula])
   </div>
 @endsection('content')

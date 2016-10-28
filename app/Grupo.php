@@ -9,10 +9,10 @@ class Grupo extends Model
     //Se delcara la tabla de la base de datos en la que se va a trabajar
     protected $table='grupos';
     //Se definen los campos con los que se van a trabajar(Agregar,Editar,Eliminar,ostrar)
-    protected $fillable=['nombre','especialidad_id','semestre','turno','profesor_id'];
+    protected $fillable=['nombre','especialidad_id','profesor_id','semestre','turno'];
 
     /*
-      Se declara las relaciones que tiene con otras tablas 
+      Se declara las relaciones que tiene con otras tablas
     */
 
 
@@ -51,7 +51,7 @@ class Grupo extends Model
         return $this->hasManyThrought('App\Materia','App\Horario');
     }
 
-    //Se declara relacion muchos a muchos con  Profesores "Un grupo puede tener muchos profesores" 
+    //Se declara relacion muchos a muchos con  Profesores "Un grupo puede tener muchos profesores"
     public function profesores(){
         return $this->hasManyThrought('App\Profesor','App\Horario');
     }

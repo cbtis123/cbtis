@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.cabecera')
 @section('content')
 <h1>Tutores</h1>
 <div class="conteiner">

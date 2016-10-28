@@ -22,8 +22,8 @@
       <td>Telefono_C</td>
       <td>Celular</td>
       <td>Especialidad</td>
-      <td>Semestre</td>
-      <td>Turno</td>
+      <td>Grupo_id</td>
+      <td>status</td>
     </tr>
   <thead>
   <tbody>
@@ -47,15 +47,17 @@
         <td>{{$alumno->telefono_c}}</td>
         <td>{{$alumno->celular}}</td>
         <td>{{$alumno->especialidad_id}}</td>
-        <td>{{$alumno->semestre}}</td>
-        <td>{{$alumno->turno}}</td>
+        <td>{{$alumno->grupo_id}}</td>
+        <td>{{$alumno->status}}</td>
+
+
 
         <td>
-          <a href="{{route('profesores.destroy',$alumno->id)}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span> </a>
+          <a href="{{route('alumnos.destroy',$alumno->id)}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span> </a>
         </td>
 
         <td>
-          <a href="{{route('profesores.edit',$alumno)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span> </a>
+          <a href="{{route('alumnos.edit',$alumno)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span> </a>
         </td>
       </tr>
     @endforeach

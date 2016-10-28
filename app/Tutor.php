@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Tutor extends Model
 {
     //Se delcara la tabla de la base de datos en la que se va a trabajar
-    protected $table='especialidades';
+    protected $table='tutores';
     //Se definen los campos con los que se van a trabajar(Agregar,Editar,Eliminar,ostrar)
-    protected $fillable=['nombre','apellido_p','apellido_m','fecha_n','Curp','estado_c','clave_en','clave_mn','clave_mv','clave_lv','colonia','calle','cp','telefono_c','celular'];
+    protected $fillable=['nombre','apellido_p','apellido_m','fecha_n','curp','estado_c','clave_en','clave_mn','clave_mv','clave_lv','colonia','calle','cp','telefono_c','celular','alumno_id'];
 
     /*
-      Se declara las relaciones que tiene con otras tablas 
+      Se declara las relaciones que tiene con otras tablas
     */
 
 
-     //Se de clara relacion muchos a muchos con materias, llamando al modelo Materia 
-     
+     //Se de clara relacion muchos a muchos con materias, llamando al modelo Materia
+
 }

@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.cabecera')
 @section('content')
   <div class='container'>
- @include('alumnos.global',['ruta'=>['alumnos.update',$alumnos],'accion'=>'PUT','alumno'=>$alumno])
+ @include('alumnos.global',['ruta'=>['alumnos.update',$alumno],'accion'=>'PUT','alumno'=>$alumno])
   </div>
 @endsection('content')

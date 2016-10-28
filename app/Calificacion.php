@@ -11,13 +11,13 @@ class Calificacion extends Model
     /*Declarocion de los datos que se pueden editar
     Nombre
     */
-    protected $fillable=['alumno_id','materia_id','profesor_id','parcial1','parcial2','parcial3','promedio'];
+    protected $fillable=['alumno_id','horario_id','parcial1','parcial2','parcial3','promedio'];
 
 
-    //Se de clara relacion muchos a muchos con materias, llamando al modelo Materia 
+    //Se de clara relacion muchos a muchos con materias, llamando al modelo Materia
 	public function alumno(){
 		return $this->belongsTo('App\Alumno');
-	}     
+	}
 
 	//Se declara la relacion uno a uno con reticulas "Solo se puede tener una calificaion de una materia por reticula"
 	public function reticula(){
