@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\EspecialidadRequest;
 
 //Se manda llamar los modelos que vamos a usar en el controlador
 use App\Especialidad;
@@ -43,7 +44,7 @@ class EspecialidadesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EspecialidadRequest $request)
     {
         //Creamos un prodcuto nuevo con el modelo Especialidad y lo rellenamos con los datos que ingresa el usuario
         $especialidad = new Especialidad($request->all());
@@ -87,6 +88,10 @@ class EspecialidadesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //Se declara la validacion
+        $this->validate($request, [
+            'nombre' => 'required|unique:especialidades,nombre,'."$id"
+            ]);
         //Buscamos la especialidad que vamos a asignar los nuevos valores con el modelo Especialidad y find
         $especialidad= Especialidad::find($id);
         //Vaciamos los atributos modificados con fill al registro ya existente

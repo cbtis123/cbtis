@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Tutor;
 use App\Http\Requests;
+use App\Http\Requests\TutorRequest;
 
 class TutoresController extends Controller
 {
@@ -36,7 +37,7 @@ class TutoresController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TutorRequest $request)
     {
         //Creamos un prodcuto nuevo con el modelo tutor y lo rellenamos con los datos que ingresa el usuario
         $tutor = new Tutor($request->all());
@@ -78,7 +79,7 @@ class TutoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TutorRequest $request, $id)
     {
         //Buscamos la tutor que vamos a asignar los nuevos valores con el modelo tutor y find
         $tutor= Tutor::find($id);

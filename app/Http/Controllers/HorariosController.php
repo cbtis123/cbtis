@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Horario;
 use App\Http\Requests;
+use App\Http\Requests\HorarioRequest;
 
 class HorariosController extends Controller
 {
@@ -35,7 +36,7 @@ class HorariosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(HorarioRequest $request)
     {
         //Creamos un prodcuto nuevo con el modelo horario y lo rellenamos con los datos que ingresa el usuario
         $horario = new Horario($request->all());
@@ -77,7 +78,7 @@ class HorariosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(HorarioRequest $request, $id)
     {
         //Buscamos la horario que vamos a asignar los nuevos valores con el modelo horario y find
         $horarios= Horario::find($id);

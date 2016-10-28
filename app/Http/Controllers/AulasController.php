@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Aula;
 use App\Http\Requests;
+use App\Http\Requests\AulaRequest;
 
 class AulasController extends Controller
 {
@@ -35,7 +36,7 @@ class AulasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AulaRequest $request)
     {
         //Creamos un prodcuto nuevo con el modelo aula y lo rellenamos con los datos que ingresa el usuario
         $aula = new Aula($request->all());
@@ -79,6 +80,10 @@ class AulasController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //Se declara la validacion
+        $this->validate($request, [
+            'nombre' => 'required|unique:aulas,nombre,'."$id"
+            ]);
         //Buscamos la aula que vamos a asignar los nuevos valores con el modelo aula y find
         $aula= Aula::find($id);
         //Vaciamos los atributos modificados con fill al registro ya existente

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Profesor;
 use App\Http\Requests;
+use App\Http\Requests\ProfesorRequest;
 
 class ProfesoresController extends Controller
 {
@@ -36,7 +37,7 @@ class ProfesoresController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProfesorRequest $request)
     {
         //Creamos un prodcuto nuevo con el modelo profesor y lo rellenamos con los datos que ingresa el usuario
         $profesor = new Profesor($request->all());
@@ -78,7 +79,7 @@ class ProfesoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProfesorRequest $request, $id)
     {
         //Buscamos la profesor que vamos a asignar los nuevos valores con el modelo profesor y find
         $profesor= Profesor::find($id);
