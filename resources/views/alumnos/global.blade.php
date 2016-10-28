@@ -61,20 +61,17 @@
 </div>
 <div class='group'>
    {!!Form::label('celular','especialidad_id')!!}
-   {!!Form::text('especialidad_id',$alumno->especialidad_id,['class'=>'form-control','placeholder'=>'Celular'])!!}
+   {!!Form::select('especialidad_id',$especialidades,['class'=>'form-control','placeholder'=>'Celular'])!!}
 </div>
 <div class='group'>
    {!!Form::label('especialidad','semestre')!!}
-   {!!Form::text('semestre',$alumno->semestre,['class'=>'form-control','placeholder'=>'Celular'])!!}
+   {!!Form::select('semestre',array('1' => '1','2' => '2','3' => '3','4' => '4','5' => '5','6' => '6'),$alumno->semestre,['class'=>'form-control'])!!}
 </div>
 <div class='group'>
    {!!Form::label('especialidad','grupo_id')!!}
-   {!!Form::text('grupo_id',$alumno->grupo_id,['class'=>'form-control','placeholder'=>'Celular'])!!}
+   {!!Form::select('grupo_id',$grupos,['class'=>'form-control','placeholder'=>'Especialidad'])!!}
 </div>
-<div class='group'>
-   {!!Form::label('especialidad','status')!!}
-   {!!Form::select('status',array('1' => 'regular', '2' => 'resagado'),$alumno->status,['class'=>'form-control'])!!}
-</div>
+
 
 <div class='group'>
    {!!Form::submit('enviar',['class'=>'btn btn-primary'])!!}

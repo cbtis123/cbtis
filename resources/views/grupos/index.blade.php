@@ -11,6 +11,8 @@
       <td>profesor_id</td>
       <td>semestre</td>
       <td>Turno</td>
+      <td>Editar</td>
+      <td>Eliminar</td>
 
     </tr>
   <thead>
@@ -25,11 +27,11 @@
         <td>{{$grupo->semestre}}</td>
         <td>{{$grupo->turno}}</td>
         <td>
-          <a href="{{route('grupos.destroy',$grupo->id)}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span> </a>
+          <a href="{{route('grupos.edit',$grupo)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span> </a>
         </td>
 
-        <td>
-          <a href="{{route('grupos.edit',$grupo)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span> </a>
+       <td>
+          @include('layouts.eliminar',['ruta'=>'/grupos/','modelo'=>$grupo])
         </td>
       </tr>
     @endforeach

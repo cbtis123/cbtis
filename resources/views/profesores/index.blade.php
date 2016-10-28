@@ -22,6 +22,8 @@
       <td>CP</td>
       <td>Telefono_C</td>
       <td>Celular</td>
+      <td>Editar</td>
+      <td>Eliminar</td>
     </tr>
   <thead>
   <tbody>
@@ -47,11 +49,11 @@
         <td>{{$profesor->celular}}</td>
 
         <td>
-          <a href="{{route('profesores.destroy',$profesor->id)}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span> </a>
+          <a href="{{route('materias.edit',$profesor)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span> </a>
         </td>
 
-        <td>
-          <a href="{{route('profesores.edit',$profesor)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span> </a>
+       <td>
+          @include('layouts.eliminar',['ruta'=>'/profesores/','modelo'=>$profesor])
         </td>
       </tr>
     @endforeach

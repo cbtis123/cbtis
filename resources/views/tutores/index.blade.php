@@ -22,6 +22,8 @@
       <td>Telefono_C</td>
       <td>Celular</td>
       <td>alumno_id</td>
+      <td>Editar</td>
+      <td>Eliminar</td>
     </tr>
   <thead>
   <tbody>
@@ -46,11 +48,11 @@
         <td>{{$tutor->celular}}</td>
         <td>{{$tutor->alumno_id}}</td>
         <td>
-          <a href="{{route('tutores.destroy',$tutor->id)}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span> </a>
+          <a href="{{route('materias.edit',$tutor)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span> </a>
         </td>
 
-        <td>
-          <a href="{{route('tutores.edit',$tutor)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span> </a>
+       <td>
+          @include('layouts.eliminar',['ruta'=>'/tutores/','modelo'=>$tutor])
         </td>
       </tr>
     @endforeach

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tutor;
+use App\Alumno;
 use App\Http\Requests;
 
 class TutoresController extends Controller
@@ -24,10 +25,11 @@ class TutoresController extends Controller
      */
     public function create()
     {
+        $alumnos=Alumno::orderBy('nombre','ASC')->pluck('nombre','id');
         //Se crea un objeto vacio del modelo tutor
         $tutor= new Tutor;
         //Se manda a llamar la vista create y le pasamos el objeto vacio que creamos con el modelo tutor
-        return view('tutores.create')->with('tutor',$tutor);
+        return view('tutores.create')->with('tutor',$tutor)->with('alumnos',$alumnos);
     }
 
     /**

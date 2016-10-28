@@ -22,7 +22,7 @@
             <a href="{{route('materias.edit',$materia)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span> </a>
           </td>
 
-          <td>
+         <td>
             @include('layouts.eliminar',['ruta'=>'/materias/','modelo'=>$materia])
           </td>
         </tr>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Alumno;
+use App\Especialidad;
+use App\Grupo;
 use App\Http\Requests;
 use App\Http\Requests\AlumnoRequest;
 
@@ -26,9 +28,11 @@ class AlumnosController extends Controller
     public function create()
     {
         //Se crea un objeto vacio del modelo alumno
+        $especialidades= Especialidad::orderBy('nombre','ASC')->pluck('nombre','id');
+        $grupos= Grupo::orderBy('nombre','ASC')->pluck('nombre','id');
         $alumno= new Alumno;
         //Se manda a llamar la vista create y le pasamos el objeto vacio que creamos con el modelo alumno
-        return view('alumnos.create')->with('alumno',$alumno);
+        return view('alumnos.create')->with('alumno',$alumno)->with('especialidades',$especialidades)->with('grupos',$grupos);
     }
 
     /**

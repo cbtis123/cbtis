@@ -22,8 +22,10 @@
       <td>Telefono_C</td>
       <td>Celular</td>
       <td>Especialidad</td>
-      <td>Grupo_id</td>
+      <td>Semestre</td>
       <td>status</td>
+      <td>Editar</td>
+      <td>Eliminar</td>
     </tr>
   <thead>
   <tbody>
@@ -47,17 +49,15 @@
         <td>{{$alumno->telefono_c}}</td>
         <td>{{$alumno->celular}}</td>
         <td>{{$alumno->especialidad_id}}</td>
-        <td>{{$alumno->grupo_id}}</td>
+        <td>{{$alumno->semestre}}</td>
         <td>{{$alumno->status}}</td>
-
-
-
-        <td>
-          <a href="{{route('alumnos.destroy',$alumno->id)}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span> </a>
-        </td>
 
         <td>
           <a href="{{route('alumnos.edit',$alumno)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span> </a>
+        </td>
+
+       <td>
+          @include('layouts.eliminar',['ruta'=>'/alumnos/','modelo'=>$alumno])
         </td>
       </tr>
     @endforeach

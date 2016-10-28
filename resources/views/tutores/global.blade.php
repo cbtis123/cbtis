@@ -61,7 +61,7 @@
 </div>
 <div class='group'>
    {!!Form::label('alumno_id','id_alumno')!!}
-   {!!Form::text('alumno_id',$tutor->alumno_id,['class'=>'form-control','placeholder'=>'Celular'])!!}
+   {!!Form::select('alumno_id',$alumnos,['class'=>'form-control','placeholder'=>'Celular'])!!}
 </div>
 <div class='group'>
    {!!Form::submit('enviar',['class'=>'btn btn-primary'])!!}
