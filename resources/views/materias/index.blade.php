@@ -7,6 +7,8 @@
       <tr>
         <td>Id</td>
         <td>Nobre</td>
+        <td>Editar</td>
+        <td>Eliminar</td>
       </tr>
     <thead>
     <tbody>
@@ -17,11 +19,11 @@
           <td>{{$materia->nombre}}</td>
 
           <td>
-            <a href="{{route('materias.destroy',$materia->id)}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span> </a>
+            <a href="{{route('materias.edit',$materia)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span> </a>
           </td>
 
           <td>
-            <a href="{{route('materias.edit',$materia)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span> </a>
+            @include('layouts.eliminar',['ruta'=>'/materias/','modelo'=>$materia])
           </td>
         </tr>
       @endforeach
