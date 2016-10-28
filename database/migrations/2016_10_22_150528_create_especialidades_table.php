@@ -19,6 +19,16 @@ class CreateEspecialidadesTable extends Migration
             $table->timestamps();
         });
 
+        DB::table('especialidades')->insert([
+    ['nombre' => 'Electromecánica'],
+    ['nombre' => 'Mecatrónica'],
+    ['nombre' => 'Programación'],
+    ['nombre' => 'Mantenimiento Automotriz'],
+    ['nombre' => 'Soporte Y Mantenimiento a Equipos de Computo'],
+    ['nombre' => 'Administración de Reucursos Humanos'],
+    ['nombre' => 'Logística']
+]);
+
     }
 
     /**
