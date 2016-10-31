@@ -18,9 +18,14 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->enum('type',['Admin','Maestro','Coordinador','Alumno','Secretaria']);
             $table->rememberToken();
             $table->timestamps();
         });
+
+        DB::table('users')->insert([
+            ['name' => 'Admin','email'=>'admin@admin.com','password'=>bcrypt(1234),'type'=>'Admin']
+        ]);
     }
 
     /**

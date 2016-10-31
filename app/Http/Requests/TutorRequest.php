@@ -13,7 +13,7 @@ class TutorRequest extends FormRequest
      */
     public function authorize()
     {
-        return Tutor;
+        return true;
     }
 
     /**
