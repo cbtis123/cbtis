@@ -1,6 +1,6 @@
 @extends('layouts.cabecera')
 @section('content')
-  <div class='container'>
+  <div class='conteiner'>
  @include('materias.global',['ruta'=>['materias.update',$materia],'accion'=>'PUT','materia'=>$materia])
   </div>
-@endsection('content')
+@endsection

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+
+	<link rel="stylesheet" type="text/css" href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/estilos.css') }}">
 		<title>
 		Cabecera
+
 		</title>
 	</head>
 	<body>
@@ -12,13 +14,15 @@
 			<header>
 				<div class="row">
 
-					<div class="col-md-4"> <img src="images/ieso.png" align="left" height="70%" width="70%" alt="no encontrado">
+
+					<div class="col-md-4"> <img src="{{ asset('images/ieso.png') }}" align="left" height="70%" width="70%" alt="no encontrado">
 					</div>
 
-					<div class="col-md-4"><img src="images/seplogo.png" align="center" height="180%" width="81%" alt="no encontrado">
+					<div class="col-md-4"><img src="{{ asset('images/seplogo.png') }}" align="center" height="180%" width="81%" alt="no encontrado">
 					</div>
 
 				  	<div class="row">
+
 						 @if (Auth::guest())
 					  	<div class="col-md-4"><a href="{{ url('/login') }}" class="myButton">Ingresar</a>
 						</div>
@@ -48,10 +52,12 @@
 
 				</div>
 			</header>
-				@include('layouts.navbar')
-				@yield('content')
+
+
 
 		</div>
+		@include('layouts.navbar')
+		@yield('content')
 	</body>
 
 
