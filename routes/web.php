@@ -24,6 +24,7 @@ Route::resource('profesores','ProfesoresController');
 Route::resource('aulas','AulasController');
 Route::resource('horas','HorasController');
 Route::resource('especialidades','EspecialidadesController');
+Route::resource('horarios','HorariosController');
 
 Auth::routes();
 

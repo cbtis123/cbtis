@@ -7,6 +7,7 @@ use App\Grupo;
 use App\Especialidad;
 use App\Profesor;
 use App\Http\Requests;
+use App\Http\Requests\GrupoRequest;
 
 class GruposController extends Controller
 {
@@ -40,7 +41,7 @@ class GruposController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(GrupoRequest $request)
     {
         //Creamos un prodcuto nuevo con el modelo grupo y lo rellenamos con los datos que ingresa el usuario
         $grupo = new Grupo($request->all());
@@ -84,6 +85,14 @@ class GruposController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //Se declara la validacion
+        $this->validate($request, [
+            'nombre' => 'required|unique:grupos,nombre,'."$id",
+            'especialidad_id' => 'required',
+            'profesor_id' => 'required',
+            'semestre' => 'required',
+            'turno' => 'required'
+            ]);
         //Buscamos la grupo que vamos a asignar los nuevos valores con el modelo grupo y find
         $grupos= Grupo::find($id);
         //Vaciamos los atributos modificados con fill al registro ya existente

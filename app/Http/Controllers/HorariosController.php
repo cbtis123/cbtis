@@ -4,7 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Horario;
+use App\Aula;
+use App\Grupo;
+use App\Materia;
+use App\Profesor;
 use App\Http\Requests;
+use App\Http\Requests\HorarioRequest;
 
 class HorariosController extends Controller
 {
@@ -25,8 +30,12 @@ class HorariosController extends Controller
     {
         //Se crea un objeto vacio del modelo horario
         $horario= new Horario;
+        $profesores=Profesor::orderBy('nombre','ASC')->pluck('nombre','id');
+        $aulas=Aula::orderBy('nombre','ASC')->pluck('nombre','id');
+        $materias=Materia::orderBy('nombre','ASC')->pluck('nombre', 'id');
+        $grupos=Grupo::orderBy('nombre','ASC')->pluck('nombre','id');
         //Se manda a llamar la vista create y le pasamos el objeto vacio que creamos con el modelo horario
-        return view('horarios.create')->with('horario',$horario);
+        return view('horarios.create')->with('horario',$horario)->with('aula',$aulas)->with('grupo',$grupos)->with('materia',$materias)->with('profesor',$profesores);
     }
 
     /**
@@ -35,7 +44,7 @@ class HorariosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(HorarioRequest $request)
     {
         //Creamos un prodcuto nuevo con el modelo horario y lo rellenamos con los datos que ingresa el usuario
         $horario = new Horario($request->all());
@@ -77,7 +86,7 @@ class HorariosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(HorarioRequest $request, $id)
     {
         //Buscamos la horario que vamos a asignar los nuevos valores con el modelo horario y find
         $horarios= Horario::find($id);

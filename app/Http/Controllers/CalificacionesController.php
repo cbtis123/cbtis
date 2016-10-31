@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Calificacion;
 use App\Http\Requests;
+use App\Http\Requests\CalificacionRequest;
 
 class CalificacionesController extends Controller
 {
@@ -36,7 +37,7 @@ class CalificacionesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CalificacionRequest $request)
     {
         //Creamos un prodcuto nuevo con el modelo calificacion y lo rellenamos con los datos que ingresa el usuario
         $calificacion = new Calificacion($request->all());
@@ -80,6 +81,11 @@ class CalificacionesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //Se declara la validacion
+        $this->validate($request, [
+            'alumno_id' => 'required',
+            'horario_id' => 'required|unique:horarios,horario_id,'."$id"
+            ]);
         //Buscamos la calificacion que vamos a asignar los nuevos valores con el modelo calificacion y find
         $calificacion= Calificacion::find($id);
         //Vaciamos los atributos modificados con fill al registro ya existente
