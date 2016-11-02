@@ -6,20 +6,15 @@
     <thead>
       <tr>
         <td>Id</td>
-        <td>aula_id</td>
-        <td>grupo_id</td>
-        <td>materia_id</td>
-        <td>profesor_id</td>
-        <td>lunes_i</td>
-        <td>lunes_f</td>
-        <td>martes_i</td>
-        <td>martes_f</td>
-        <td>miercoles_i</td>
-        <td>miercoles_f</td>
-        <td>jueves_i</td>
-        <td>jueves_f</td>
-        <td>viernes_i</td>
-        <td>viernes_f</td>
+        <td>Aula</td>
+        <td>Grupo</td>
+        <td>Materia</td>
+        <td>Profesor</td>
+        <td>Lunes</td>
+        <td>Martes</td>
+        <td>Miercoles</td>
+        <td>Jueves</td>
+        <td>Viernes</td>
         <td>Editar</td>
         <td>Eliminar</td>
       </tr>
@@ -30,19 +25,16 @@
         <tr>
 
           <td>{{$horario->id}}</td>
-          <td>{{$horario->aula_id}}</td>
-          <td>{{$horario->grupo_id}}</td>
-          <td>{{$horario->materia_id}}</td>
-          <td>{{$horario->lunes_i}}</td>
-          <td>{{$horario->lunes_f}}</td>
-          <td>{{$horario->martes_i}}</td>
-          <td>{{$horario->martes_f}}</td>
-          <td>{{$horario->miercoles_i}}</td>
-          <td>{{$horario->miercoles_f}}</td>
-          <td>{{$horario->jueves_i}}</td>
-          <td>{{$horario->jueves_f}}</td>
-          <td>{{$horario->viernes_i}}</td>
-          <td>{{$horario->viernes_f}}</td>
+          <td>{{$horario->aula}}</td>
+          <td>{{$horario->grupo}}</td>
+          <td>{{$horario->materia}}</td>
+          <td>{{$horario->profesor}}</td>
+          <td>{{$horario->lunes_i}} - {{$horario->lunes_f}}</td>
+          <td>{{$horario->martes_i}} - {{$horario->martes_f}}</td>
+          <td>{{$horario->miercoles_i}} - {{$horario->miercoles_f}}</td>
+          <td>{{$horario->jueves_i}} - {{$horario->jueves_f}}</td>
+          <td>{{$horario->viernes_i}} - {{$horario->viernes_f}}</td>
+          
 
           <td>
             <a href="{{route('horarios.edit',$horario)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span> </a>
