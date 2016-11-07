@@ -25,7 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('profesores','ProfesoresController');
 	Route::resource('aulas','AulasController');
 	Route::resource('horarios','HorariosController');
-	Route::resource('especialidades','EspecialidadesController');
+	Route::resource('licenciaturas','LicenciaturasController');
 });
 
 

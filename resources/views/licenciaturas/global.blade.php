@@ -1,7 +1,7 @@
 {!!Form::open(['route'=>$ruta,'method'=>$accion]) !!}
 <div class='group'>
    {!!Form::label('nombre','Nombre')!!}
-   {!!Form::text('nombre',$especialidad->nombre,['class'=>'form-control','placeholder'=>'Nombre'])!!}
+   {!!Form::text('nombre',$licenciatura->nombre,['class'=>'form-control','placeholder'=>'Nombre'])!!}
 </div>
 
 

@@ -69,8 +69,6 @@ class CreateMateriasTable extends Migration
     ['nombre' => 'Seminario de tesis I'],
     ['nombre' => 'Seminario de tesis II'],
 
-
-
     //>>>>>>>ING. EN SISTEMAS<<<<<<<<<
     //1° CUATRIMESTRE SISTEMAS
     ['nombre' => 'Diseño estructurado de algoritmos'],
@@ -127,7 +125,6 @@ class CreateMateriasTable extends Migration
     ['nombre' => 'Inteligencia artificial'],
     ['nombre' => 'Robótica'],
     ['nombre' => 'Inglés técnico III'],
-
 
          //>>>>ADMINISTRACION<<<<<<
 

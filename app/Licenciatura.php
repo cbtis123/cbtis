@@ -4,15 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Especialidad extends Model
+class Licenciatura extends Model
 {
     //Se delcara la tabla de la base de datos en la que se va a trabajar
-    protected $table='especialidades';
+    protected $table='licenciaturas';
     //Se definen los campos con los que se van a trabajar(Agregar,Editar,Eliminar,ostrar)
     protected $fillable=['nombre'];
 
     /*
-      Se declara las relaciones que tiene con otras tablas 
+      Se declara las relaciones que tiene con otras tablas
     */
 
 
@@ -29,5 +29,5 @@ class Especialidad extends Model
     //Se declara la relacion uno a muchos "Una especialidad puede tener muchos grupos"
      public function grupos(){
         return $this->hasMany('App\Grupo');
-     }     
+     }
 }
