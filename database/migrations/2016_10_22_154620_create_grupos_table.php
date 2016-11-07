@@ -16,11 +16,11 @@ class CreateGruposTable extends Migration
         Schema::create('grupos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->integer('especialidad_id')->unsigned();
+            $table->integer('licenciatura_id')->unsigned();
             $table->integer('profesor_id')->unsigned()->nullable();
             $table->enum('semestre',['1','2','3','4','5','6']);
             $table->enum('turno',['matutino','vespertino']);
-            $table->foreign('especialidad_id')->references('id')->on('especialidades')->onDelete('cascade');
+            $table->foreign('licenciatura_id')->references('id')->on('licenciaturas')->onDelete('cascade');
             $table->foreign('profesor_id')->references('id')->on('profesores')->onDelete('cascade');
             $table->timestamps();
         });
