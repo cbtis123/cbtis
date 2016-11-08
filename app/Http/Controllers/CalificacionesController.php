@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Calificacion;
+use App\Alumno;
+use App\Materia;
 use App\Http\Requests;
 use App\Http\Requests\CalificacionRequest;
 
@@ -25,10 +27,12 @@ class CalificacionesController extends Controller
      */
     public function create()
     {
+        $alumno= Alumno::orderBy('nombre','ASC')->pluck('nombre','id');
+        $materia= Materia::orderBy('nombre','ASC')->pluck('nombre','id');
         //Se crea un objeto vacio del modelo calificacion
         $calificacion= new Calificacion;
         //Se manda a llamar la vista create y le pasamos el objeto vacio que creamos con el modelo calificacion
-        return view('calificaciones.create')->with('calificacion',$calificacion);
+        return view('calificaciones.create')->with('calificacion',$calificacion)->with('alumno',$alumno)->with('materia',$materia);
     }
 
     /**

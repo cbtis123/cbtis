@@ -47,6 +47,7 @@ class AlumnosController extends Controller
         $alumno = new Alumno($request->all());
         //Mandamos a guaradar la nueva alumno creada
         $alumno->save();
+        flash('Se ha registrado el alumno '.$alumno->nombre.' con exito!!','success');
         //Redireccionamos al index
         return redirect()->route('alumnos.index');
     }
@@ -94,6 +95,7 @@ class AlumnosController extends Controller
         //Guardamos la alumno con los campos ya modificados
         $alumno->save();
         //Redireccionamos al index
+        flash('Se ha actualizado el alumno '.$alumno->nombre.' con exito!!','success');
         return redirect()->route('alumnos.index');
     }
 
@@ -108,6 +110,7 @@ class AlumnosController extends Controller
         //Buscamos y eliminaos la alumno que seleccionamos
         Alumno::destroy($id);
         //Redireccionamos al index
+        flash('Se ha eliminado el alumno con exito!!','danger');
         return redirect()->route('alumnos.index');
     }
 }

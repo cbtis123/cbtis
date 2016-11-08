@@ -38,10 +38,9 @@ class AlumnoRequest extends FormRequest
             'cp' => 'required|max:10',
             'telefono_c' => 'required|max:10',
             'celular' => 'required|max:10',
-            'especialidad_id' => 'required',
+            'licenciatura_id' => 'required',
             'cuatrimestre' => 'required',
-            'grupo_id' => 'required',
-            'especialidad_id' => 'required'
+            'grupo_id' => 'required'
 
         ];
     }

@@ -1,11 +1,11 @@
 {!!Form::open(['route'=>$ruta,'method'=>$accion]) !!}
 <div class='group'>
    {!!Form::label('alumno_id','alumno_id')!!}
-   {!!Form::text('alumno_id',$calificacion->alumno_id,['class'=>'form-control','placeholder'=>'nombre'])!!}
+   {!!Form::select('alumno_id',$alumno,['class'=>'form-control','placeholder'=>'nombre'])!!}
 </div>
 <div class='group'>
    {!!Form::label('materia_id','materia_id')!!}
-   {!!Form::text('horario_id',$calificacion->materia_id,['class'=>'form-control','placeholder'=>'nombre'])!!}
+   {!!Form::select('horario_id',$materia,['class'=>'form-control','placeholder'=>'nombre'])!!}
 </div>
 <div class='group'>
    {!!Form::label('profesor_id','Parcial 1')!!}

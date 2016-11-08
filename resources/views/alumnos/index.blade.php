@@ -1,9 +1,9 @@
 @extends('layouts.cabecera')
+@section('title','Alumnos')
 @section('content')
-<h1>Alumnos</h1>
-<div class="container">
+<div class="container-fluid">
   <div class="table-responsive">
-    <table class="table table-bordered table-striped table-hover" id="mi_tabla">
+    <table class="table table-bordered table-hover" id="mi_tabla">
       <thead>
         <tr>
           <td>id</td>
@@ -17,7 +17,7 @@
         </tr>
       <thead>
       <tbody>
-       <a href="{{route('alumnos.create')}}"><span class="glyphicon glyphicon-plus">Nuevo</span> </a>
+       <a href="{{route('alumnos.create')}}" class="btn btn-success"><span class="glyphicon glyphicon-plus">Nuevo</span> </a>
         @foreach ($alumnos as $alumno)
           <tr>
             <td>{{$alumno->id}}</td>

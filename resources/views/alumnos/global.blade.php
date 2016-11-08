@@ -13,7 +13,7 @@
 </div>
 <div class='group'>
    {!!Form::label('fecha_n','Fecha_n')!!}
-   {!!Form::text('fecha_n',$alumno->fecha_n,['class'=>'form-control','placeholder'=>'fecha de nacimiento'])!!}
+   {!!Form::date('fecha_n',$alumno->fecha_n,['class'=>'form-control','placeholder'=>'fecha de nacimiento'])!!}
 </div>
 <div class='group'>
    {!!Form::label('curp','CURP')!!}
@@ -21,7 +21,7 @@
 </div>
 <div class='group'>
    {!!Form::label('estado_c','Estado_c')!!}
-   {!!Form::text('estado_c',$alumno->estado_c,['class'=>'form-control','placeholder'=>'Estado civil'])!!}
+   {!!Form::select('estado_c',array('soltero' => 'soltero','casado' => 'casado'),['class'=>'form-control','placeholder'=>'Estado civil'])!!}
 </div>
 <div class='group'>
    {!!Form::label('clave_en','Clave_en')!!}
@@ -60,11 +60,11 @@
    {!!Form::text('celular',$alumno->celular,['class'=>'form-control','placeholder'=>'Celular'])!!}
 </div>
 <div class='group'>
-   {!!Form::label('celular','especialidad_id')!!}
-   {!!Form::select('licenciaturas_id',$licenciaturas,['class'=>'form-control','placeholder'=>'Celular'])!!}
+   {!!Form::label('Licenciatura','licenciatura_id')!!}
+   {!!Form::select('licenciatura_id',$licenciaturas,['class'=>'form-control','placeholder'=>'Celular'])!!}
 </div>
 <div class='group'>
-   {!!Form::label('especialidad','cuatrimestre')!!}
+   {!!Form::label('cuatrimestre','cuatrimestre')!!}
    {!!Form::select('cuatrimestre',array('1' => '1','2' => '2','3' => '3','4' => '4','5' => '5','6' => '6'),$alumno->cuatrimestre,['class'=>'form-control'])!!}
 </div>
 <div class='group'>

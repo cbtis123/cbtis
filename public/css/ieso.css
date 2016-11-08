@@ -1,0 +1,8 @@
+header {
+	padding: 1em;
+
+	 /*gradiente*/
+	background-image: url("../images/degradado.png");
+    background-repeat: repeat-x;
+}
+
