@@ -82,7 +82,7 @@ class HorariosController extends Controller
         $materias=Materia::orderBy('nombre','ASC')->pluck('nombre', 'id');
         $grupos=Grupo::orderBy('nombre','ASC')->pluck('nombre','id');
         //Mandamos a llamar la vista edit y le mandamos la horario que extragimos de la base mediante el model horario
-        return view('horarios.edit')->with('horario',$horario);
+        return view('horarios.edit')->with('horario',$horario)->with('aula',$aulas)->with('grupo',$grupos)->with('materia',$materias)->with('profesor',$profesores);
     }
 
     /**
