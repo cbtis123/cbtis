@@ -2,7 +2,7 @@
 @section('content')
 <h1>Profesores</h1>
 <div class="conteiner">
-<table class="table table-bordered">
+<table class="table table-bordered table-striped table-hover" id="mi_tabla">
   <thead>
     <tr>
       <td>id</td>

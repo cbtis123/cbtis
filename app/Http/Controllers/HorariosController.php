@@ -16,7 +16,7 @@ class HorariosController extends Controller
      public function index()
     {
 
-        
+
         //Se manda a llamar todas las horarios que existen en la tabla 'horarios' mediante el modelo horario
         $horarios= Horario::DetalleHorario();
         //Se manda a llamar la vista index y le pasamos la lista de usuarios que obtuvimos mediante el modelo horario
@@ -77,6 +77,10 @@ class HorariosController extends Controller
     {
         //Buscamos la horario que queremos modificar con el modelo horario y con el parametro ID que rescibimos
         $horario = Horario::find($id);
+        $profesores=Profesor::orderBy('nombre','ASC')->pluck('nombre','id');
+        $aulas=Aula::orderBy('nombre','ASC')->pluck('nombre','id');
+        $materias=Materia::orderBy('nombre','ASC')->pluck('nombre', 'id');
+        $grupos=Grupo::orderBy('nombre','ASC')->pluck('nombre','id');
         //Mandamos a llamar la vista edit y le mandamos la horario que extragimos de la base mediante el model horario
         return view('horarios.edit')->with('horario',$horario);
     }

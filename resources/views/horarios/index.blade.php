@@ -2,7 +2,7 @@
 @section('content')
 <h1>Horarios</h1>
 <div class="conteiner">
-  <table class="table table-bordered">
+  <table  class="table table-bordered table-striped table-hover" id="mi_tabla">
     <thead>
       <tr>
         <td>Id</td>
@@ -34,7 +34,7 @@
           <td>{{$horario->miercoles_i}} - {{$horario->miercoles_f}}</td>
           <td>{{$horario->jueves_i}} - {{$horario->jueves_f}}</td>
           <td>{{$horario->viernes_i}} - {{$horario->viernes_f}}</td>
-          
+
 
           <td>
             <a href="{{route('horarios.edit',$horario)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span> </a>

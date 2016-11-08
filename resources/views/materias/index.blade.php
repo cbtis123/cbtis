@@ -2,7 +2,7 @@
 @section('content')
 <h1 class="tablatitulo" align="center">Materias</h1>
 <div class="container">
-  <table>
+  <table  class="table table-bordered table-striped table-hover" id="mi_tabla">
     <thead>
       <tr>
         <td>Id</td>
