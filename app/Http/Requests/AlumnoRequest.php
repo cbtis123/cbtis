@@ -39,7 +39,7 @@ class AlumnoRequest extends FormRequest
             'telefono_c' => 'required|max:10',
             'celular' => 'required|max:10',
             'especialidad_id' => 'required',
-            'semestre' => 'required',
+            'cuatrimestre' => 'required',
             'grupo_id' => 'required',
             'especialidad_id' => 'required'
 

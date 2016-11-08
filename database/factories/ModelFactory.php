@@ -47,8 +47,7 @@ $factory->define(Grupo::class, function(Generator $faker){
       return [
             'nombre' => $faker->randomElement($array = array ('ISC','LA','LD','LP')).'-'.$faker->numberBetween($min = 100, $max =200),
             'licenciatura_id' => $faker->numberBetween($min = 1, $max = 6),
-            'profesor_id' => $faker->numberBetween($min = 1, $max = 12),
-            'semestre' => $faker->numberBetween($min = 1, $max = 6),
+            'cuatrimestre' => $faker->numberBetween($min = 1, $max = 10),
             'turno' => $faker->randomElement($array = array ('Matutino','Vespertino'))
             ];
       
@@ -93,7 +92,7 @@ $factory->define(Alumno::class, function(Generator $faker){
             'telefono_c' =>$faker->tollFreePhoneNumber ,
             'celular' => $faker->tollFreePhoneNumber,
             'licenciatura_id' => $faker->numberBetween($min = 1, $max = 9),
-            'semestre' => $faker->numberBetween($min = 1, $max = 6),
+            'cuatrimestre' => $faker->numberBetween($min = 1, $max = 10),
             'grupo_id' => $faker->numberBetween($min = 1, $max = 12)
       ];
       

@@ -28,7 +28,7 @@ class GrupoRequest extends FormRequest
         'nombre' => 'required|unique:grupos,nombre',
         'especialidad_id' => 'required',
         'profesor_id' => 'required',
-        'semestre' => 'required',
+        'cuatrimestre' => 'required',
         'turno' => 'required'
         ];
     }

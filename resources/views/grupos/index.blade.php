@@ -8,9 +8,8 @@
         <tr>
           <td>Id</td>
           <td>Nombre</td>
-          <td>especialidad_id</td>
-          <td>profesor_id</td>
-          <td>semestre</td>
+          <td>Licenciatura</td>
+          <td>Cuatrimestre</td>
           <td>Turno</td>
           <td>Editar</td>
           <td>Eliminar</td>
@@ -24,8 +23,7 @@
             <td>{{$grupo->id}}</td>
             <td>{{$grupo->nombre}}</td>
             <td>{{$grupo->licenciatura->nombre}}</td>
-            <td>{{$grupo->profesor_id}}</td>
-            <td>{{$grupo->semestre}}</td>
+            <td>{{$grupo->cuatrimestre}}</td>
             <td>{{$grupo->turno}}</td>
             <td>
               <a href="{{route('grupos.edit',$grupo)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span> </a>
