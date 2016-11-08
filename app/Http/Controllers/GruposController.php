@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Grupo;
-use App\Especialidad;
+use App\Licenciatura;
 use App\Profesor;
 use App\Http\Requests;
 use App\Http\Requests\GrupoRequest;
@@ -70,10 +70,12 @@ class GruposController extends Controller
      */
     public function edit($id)
     {
+        $licenciaturas= Licenciatura::orderBy('nombre','ASC')->pluck('nombre','id');
+        $profesores=Profesor::orderBy('nombre', 'ASC')->pluck('nombre','id');
         //Buscamos la grupo que queremos modificar con el modelo grupo y con el parametro ID que rescibimos
         $grupo = Grupo::find($id);
         //Mandamos a llamar la vista edit y le mandamos la grupo que extragimos de la base mediante el model grupo
-        return view('grupos.edit')->with('grupo',$grupo);
+        return view('grupos.edit')->with('grupo',$grupo)->with('licenciaturas',$licenciaturas)->with('profesores',$profesores);
     }
 
     /**

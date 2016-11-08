@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EspecialidadRequest extends FormRequest
+class LicenciaturaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,7 @@ class EspecialidadRequest extends FormRequest
     {
         return [
             //
-        'nombre' => 'required|unique:especialidades,nombre'
+        'nombre' => 'required|unique:licenciaturas,nombre'
         ];
     }
 }
