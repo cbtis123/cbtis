@@ -1,6 +1,6 @@
 @extends('layouts.cabecera')
 @section('content')
-<h1>Especialidades</h1>
+<h1>Licenciaturas</h1>
 <div class="conteiner">
 <table class="table table-bordered">
   <thead>
