@@ -70,10 +70,12 @@ class AlumnosController extends Controller
      */
     public function edit($id)
     {
+        $especialidades= Especialidad::orderBy('nombre','ASC')->pluck('nombre','id');
+        $grupos= Grupo::orderBy('nombre','ASC')->pluck('nombre','id');
         //Buscamos la alumno que queremos modificar con el modelo alumno y con el parametro ID que rescibimos
         $alumno = Alumno::find($id);
         //Mandamos a llamar la vista edit y le mandamos la alumno que extragimos de la base mediante el model alumno
-        return view('alumnos.edit')->with('alumno',$alumno);
+        return view('alumnos.edit')->with('alumno',$alumno)->with('especialidades',$especialidades)->with('grupos',$grupos);
     }
 
     /**

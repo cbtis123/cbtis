@@ -14,5 +14,9 @@ class BaseSeeder extends Seeder
         //
         factory(App\Alumno::class,12)->create();
         factory(App\Profesor::class,12)->create();
+        factory(App\Tutor::class,12)->create();
+        factory(App\Grupo::class,12)->create();
+        factory(App\Horario::class,8)->create();
     }
+    
 }

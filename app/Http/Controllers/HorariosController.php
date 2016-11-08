@@ -15,8 +15,10 @@ class HorariosController extends Controller
 {
      public function index()
     {
+
+        
         //Se manda a llamar todas las horarios que existen en la tabla 'horarios' mediante el modelo horario
-        $horarios = Horario::all();
+        $horarios= Horario::DetalleHorario();
         //Se manda a llamar la vista index y le pasamos la lista de usuarios que obtuvimos mediante el modelo horario
         return view('horarios.index')->with('horarios',$horarios);
     }

@@ -1,8 +1,8 @@
 @extends('layouts.cabecera')
 @section('content')
-<h1>Materias</h1>
-<div class="conteiner">
-  <table class="table table-bordered">
+<h1 class="tablatitulo" align="center">Materias</h1>
+<div class="container">
+  <table>
     <thead>
       <tr>
         <td>Id</td>
