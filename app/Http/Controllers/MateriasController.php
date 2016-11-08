@@ -12,7 +12,7 @@ class MateriasController extends Controller
     public function index()
     {
         //Se manda a llamar todas las materias que existen en la tabla 'materias' mediante el modelo materia
-        $materias = Materia::orderBy('id','ASC');
+        $materias = Materia::all();
         //Se manda a llamar la vista index y le pasamos la lista de usuarios que obtuvimos mediante el modelo materia
         return view('materias.index')->with('materias',$materias);
     }

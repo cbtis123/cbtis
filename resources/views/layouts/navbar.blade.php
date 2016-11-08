@@ -19,7 +19,7 @@
 
 				  <ul class="dropdown-menu">
 				  	<li><a href="{{ url('/materias') }}" >Materias</a></li>
-				  	<li><a href="{{ url('/materias') }}" >Aulas</a></li>
+				  	<li><a href="{{ url('/aulas') }}" >Aulas</a></li>
 				  	<li><a href="{{ url('/licenciaturas') }}">Licenciaturas</a></li>
 				  	<li><a href="{{ url('/grupos') }}">Grupos</a></li>
 				  </ul>

@@ -92,7 +92,7 @@ class GruposController extends Controller
             'nombre' => 'required|unique:grupos,nombre,'."$id",
             'especialidad_id' => 'required',
             'profesor_id' => 'required',
-            'semestre' => 'required',
+            'cuatrimestre' => 'required',
             'turno' => 'required'
             ]);
         //Buscamos la grupo que vamos a asignar los nuevos valores con el modelo grupo y find

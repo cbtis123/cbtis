@@ -12,8 +12,8 @@
      {!!Form::select('profesor_id',$profesores,['class'=>'form-control','placeholder'=>'nombre'])!!}
   </div>
   <div class='group'>
-     {!!Form::label('semestre','semestre')!!}
-     {!!Form::select('semestre',array('1' => '1', '2' => '2','3' => '3','4' => '4', '5' => '5', '6' => '6'),$grupo->semestre,['class'=>'form-control','placeholder'=>'nombre'])!!}
+     {!!Form::label('cuatrimestre','cuatrimestre')!!}
+     {!!Form::select('cuatrimestre',array('1' => '1', '2' => '2','3' => '3','4' => '4', '5' => '5', '6' => '6'),$grupo->cuatrimestre,['class'=>'form-control','placeholder'=>'nombre'])!!}
   </div>
   <div class='group'>
      {!!Form::label('turno','turno')!!}

@@ -9,7 +9,7 @@ class Grupo extends Model
     //Se delcara la tabla de la base de datos en la que se va a trabajar
     protected $table='grupos';
     //Se definen los campos con los que se van a trabajar(Agregar,Editar,Eliminar,ostrar)
-    protected $fillable=['nombre','especialidad_id','profesor_id','semestre','turno'];
+    protected $fillable=['nombre','especialidad_id','profesor_id','cuatrimestre','turno'];
 
     /*
       Se declara las relaciones que tiene con otras tablas
@@ -22,8 +22,8 @@ class Grupo extends Model
     }
 
      //Se declara relacion uno a muchos con grupos "Un grupo solo puede tener una especialidad "
-    public function especialidad(){
-        return $this->belongsTo('App\Especialidad');
+    public function licenciatura(){
+        return $this->belongsTo('App\Licenciatura');
     }
 
     //Se declara relacion muchos a muchos con grupos "Un grupo puede tener muchos alumnos"

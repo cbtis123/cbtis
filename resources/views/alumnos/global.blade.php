@@ -64,8 +64,8 @@
    {!!Form::select('licenciaturas_id',$licenciaturas,['class'=>'form-control','placeholder'=>'Celular'])!!}
 </div>
 <div class='group'>
-   {!!Form::label('especialidad','semestre')!!}
-   {!!Form::select('semestre',array('1' => '1','2' => '2','3' => '3','4' => '4','5' => '5','6' => '6'),$alumno->semestre,['class'=>'form-control'])!!}
+   {!!Form::label('especialidad','cuatrimestre')!!}
+   {!!Form::select('cuatrimestre',array('1' => '1','2' => '2','3' => '3','4' => '4','5' => '5','6' => '6'),$alumno->cuatrimestre,['class'=>'form-control'])!!}
 </div>
 <div class='group'>
    {!!Form::label('especialidad','grupo_id')!!}
