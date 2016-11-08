@@ -22,8 +22,8 @@ class Grupo extends Model
     }
 
      //Se declara relacion uno a muchos con grupos "Un grupo solo puede tener una especialidad "
-    public function especialidad(){
-        return $this->belongsTo('App\Especialidad');
+    public function licenciatura(){
+        return $this->belongsTo('App\Licenciatura');
     }
 
     //Se declara relacion muchos a muchos con grupos "Un grupo puede tener muchos alumnos"

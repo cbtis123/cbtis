@@ -29,8 +29,8 @@ class Alumno extends Model
      }
 
      //Se declara la relacion con las especialidades muchos a uno "Un alumno solo puede tener una especialidad"
-     public function especialidad(){
-        return $this->belongsTo('App\Especialidad');
+     public function licenciatura(){
+        return $this->belongsTo('App\Licenciatura');
      }
 
      //Se declara la relacion con los horarios muchos a muchos "Un alumno puede tener muchas horas de clase"

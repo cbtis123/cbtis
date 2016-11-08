@@ -23,7 +23,7 @@
           <tr>
             <td>{{$grupo->id}}</td>
             <td>{{$grupo->nombre}}</td>
-            <td>{{$grupo->especialidad_id}}</td>
+            <td>{{$grupo->licenciatura->nombre}}</td>
             <td>{{$grupo->profesor_id}}</td>
             <td>{{$grupo->semestre}}</td>
             <td>{{$grupo->turno}}</td>
