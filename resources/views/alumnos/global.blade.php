@@ -61,7 +61,7 @@
 </div>
 <div class='group'>
    {!!Form::label('celular','especialidad_id')!!}
-   {!!Form::select('especialidad_id',$especialidades,['class'=>'form-control','placeholder'=>'Celular'])!!}
+   {!!Form::select('licenciaturas_id',$licenciaturas,['class'=>'form-control','placeholder'=>'Celular'])!!}
 </div>
 <div class='group'>
    {!!Form::label('especialidad','cuatrimestre')!!}

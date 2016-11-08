@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Alumno;
-use App\Especialidad;
+use App\Licenciatura;
 use App\Grupo;
 use App\Http\Requests;
 use App\Http\Requests\AlumnoRequest;
@@ -28,11 +28,11 @@ class AlumnosController extends Controller
     public function create()
     {
         //Se crea un objeto vacio del modelo alumno
-        $especialidades= Especialidad::orderBy('nombre','ASC')->pluck('nombre','id');
+        $licenciaturas= Licenciatura::orderBy('nombre','ASC')->pluck('nombre','id');
         $grupos= Grupo::orderBy('nombre','ASC')->pluck('nombre','id');
         $alumno= new Alumno;
         //Se manda a llamar la vista create y le pasamos el objeto vacio que creamos con el modelo alumno
-        return view('alumnos.create')->with('alumno',$alumno)->with('especialidades',$especialidades)->with('grupos',$grupos);
+        return view('alumnos.create')->with('alumno',$alumno)->with('licenciaturas',$licenciaturas)->with('grupos',$grupos);
     }
 
     /**
@@ -70,12 +70,12 @@ class AlumnosController extends Controller
      */
     public function edit($id)
     {
-        $especialidades= Especialidad::orderBy('nombre','ASC')->pluck('nombre','id');
+        $licenciaturas= Licenciatura::orderBy('nombre','ASC')->pluck('nombre','id');
         $grupos= Grupo::orderBy('nombre','ASC')->pluck('nombre','id');
         //Buscamos la alumno que queremos modificar con el modelo alumno y con el parametro ID que rescibimos
         $alumno = Alumno::find($id);
         //Mandamos a llamar la vista edit y le mandamos la alumno que extragimos de la base mediante el model alumno
-        return view('alumnos.edit')->with('alumno',$alumno)->with('especialidades',$especialidades)->with('grupos',$grupos);
+        return view('alumnos.edit')->with('alumno',$alumno)->with('licenciaturas',$licenciaturas)->with('grupos',$grupos);
     }
 
     /**

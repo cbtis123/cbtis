@@ -26,7 +26,7 @@
             <td>{{$profesor->estado_c}}</td>
 
             <td>
-              <a href="{{route('materias.edit',$profesor)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span> </a>
+              <a href="{{route('profesores.edit',$profesor)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span> </a>
             </td>
 
            <td>
