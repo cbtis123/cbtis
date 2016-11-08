@@ -87,7 +87,7 @@ $factory->define(Tutor::class, function(Generator $faker){
 $factory->define(Grupo::class, function(Generator $faker){
       return [
             'nombre' => $faker->randomElement($array = array ('ISC','LA','LD','LP')).'-'.$faker->numberBetween($min = 100, $max =200),
-            'especialidad_id' => $faker->numberBetween($min = 1, $max = 6),
+            'licenciatura_id' => $faker->numberBetween($min = 1, $max = 6),
             'profesor_id' => $faker->numberBetween($min = 1, $max = 12),
             'semestre' => $faker->numberBetween($min = 1, $max = 6),
             'turno' => $faker->randomElement($array = array ('Matutino','Vespertino'))
