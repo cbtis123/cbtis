@@ -31,7 +31,7 @@ class CreateAlumnosTable extends Migration
             $table->string('telefono_c');
             $table->string('celular');
             $table->integer('licenciatura_id')->unsigned()->nullable();
-            $table->enum('catrimestre',['1','2','3','4','5','6','7','8','9','10']);
+            $table->enum('cuatrimestre',['1','2','3','4','5','6','7','8','9','10']);
             $table->integer('grupo_id')->unsigned()->nullable();
             $table->enum('status',['regular','resagado'])->default('regular');
 

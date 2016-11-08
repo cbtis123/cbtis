@@ -8,7 +8,7 @@
         <tr>
           <td>id</td>
           <td>Nombre</td>
-          <td>Semestre</td>
+          <td>cuatrimestre</td>
           <td>Grupo</td>
           <td>Licenciatura</td>
           <td>status</td>
@@ -22,7 +22,7 @@
           <tr>
             <td>{{$alumno->id}}</td>
             <td>{{$alumno->apellido_p}} {{$alumno->apellido_m}} {{$alumno->nombre}}</td>
-            <td>{{$alumno->semestre}}</td>
+            <td>{{$alumno->cuatrimestre}}</td>
             <td>{{$alumno->grupo->nombre}}</td>
             <td>{{$alumno->licenciatura->nombre}}</td>
             <td>{{$alumno->status}}</td>

@@ -17,10 +17,9 @@ class CreateGruposTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->integer('licenciatura_id')->unsigned();
-            $table->enum('catrimestre',['1','2','3','4','5','6','7','8','9','10']);
+            $table->enum('cuatrimestre',['1','2','3','4','5','6','7','8','9','10']);
             $table->enum('turno',['matutino','vespertino']);
             $table->foreign('licenciatura_id')->references('id')->on('licenciaturas')->onDelete('cascade');
-            $table->foreign('profesor_id')->references('id')->on('profesores')->onDelete('cascade');
             $table->timestamps();
         });
 

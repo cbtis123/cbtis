@@ -17,7 +17,7 @@ class CreateLicenciaturasMTable extends Migration
             $table->increments('id');
             $table->integer('licenciatura_id')->unsigned();
             $table->integer('materia_id')->unsigned();
-            $table->enum('semestre',['1','2','3','4','5','6']);
+            $table->enum('cuatrimestre',['1','2','3','4','5','6']);
             $table->foreign('licenciatura_id')->references('id')->on('licenciaturas')->onDelete('cascade');
             $table->foreign('materia_id')->references('id')->on('materias')->onDelete('cascade');
             $table->timestamps();
