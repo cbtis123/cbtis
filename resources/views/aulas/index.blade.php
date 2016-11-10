@@ -6,7 +6,6 @@
     <table  class="table table-bordered table-striped table-hover" id="mi_tabla">
       <thead>
         <tr>
-          <td>Id</td>
           <td>Nobre</td>
           <td>Editar</td>
           <td>Eliminar</td>
@@ -16,7 +15,6 @@
 
         @foreach ($aulas as $aula)
           <tr>
-            <td>{{$aula->id}}</td>
             <td>{{$aula->nombre}}</td>
 
             <td>

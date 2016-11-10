@@ -6,7 +6,6 @@
     <table  class="table table-bordered table-striped table-hover" id="mi_tabla">
       <thead>
         <tr>
-          <td>Id</td>
           <td>Nobre</td>
           <td>Editar</td>
           <td>Eliminar</td>
@@ -15,7 +14,6 @@
       <tbody>
         @foreach ($materias as $materia)
           <tr>
-            <td>{{$materia->id}}</td>
             <td>{{$materia->nombre}}</td>
 
             <td>

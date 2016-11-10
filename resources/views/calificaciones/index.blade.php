@@ -6,7 +6,6 @@
     <table  class="table table-bordered table-striped table-hover" id="mi_tabla">
       <thead>
         <tr>
-          <td>Id</td>
           <td>Alumno_id</td>
           <td>Materia_id</td>
           <td>Profesor_id</td>
@@ -21,7 +20,6 @@
 
         @foreach ($calificaciones as $calificacion)
           <tr>
-            <td>{{$calificacion->id}}</td>
             <td>{{$calificacion->alumno_id}}</td>
             <td>{{$calificacion->materia_id}}</td>
             <td>{{$calificacion->profesor_id}}</td>

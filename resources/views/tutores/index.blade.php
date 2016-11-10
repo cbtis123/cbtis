@@ -6,7 +6,6 @@
     <table  class="table table-bordered table-striped table-hover" id="mi_tabla">
       <thead>
         <tr>
-          <td>id</td>
           <td>Nombrembre</td>
           <td>Apellidno P</td>
           <td>Apellido M</td>
@@ -26,7 +25,6 @@
       <tbody>
         @foreach ($tutores as $tutor)
           <tr>
-            <td>{{$tutor->id}}</td>
             <td>{{$tutor->nombre}}</td>
             <td>{{$tutor->apellido_p}}</td>
             <td>{{$tutor->apellido_m}}</td>

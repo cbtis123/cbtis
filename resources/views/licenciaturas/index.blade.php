@@ -6,7 +6,6 @@
     <table class="table table-bordered table-striped table-hover" id="mi_tabla">
       <thead>
         <tr>
-          <td>Id</td>
           <td>nombre</td>
           <td>Editar</td>
           <td>Eliminar</td>
@@ -16,10 +15,7 @@
 
         @foreach ($licenciaturas as $licenciatura)
           <tr>
-            <td>{{$licenciatura->id}}</td>
             <td>{{$licenciatura->nombre}}</td>
-
-
             <td>
               <a href="{{route('licenciaturas.edit',$licenciatura)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span> </a>
             </td>

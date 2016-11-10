@@ -6,7 +6,6 @@
     <table class="table table-bordered table-striped table-hover" id="mi_tabla">
       <thead>
         <tr>
-          <td>Id</td>
           <td>Nombre</td>
           <td>Licenciatura</td>
           <td>Cuatrimestre</td>
@@ -20,7 +19,6 @@
 
         @foreach ($grupos as $grupo)
           <tr>
-            <td>{{$grupo->id}}</td>
             <td>{{$grupo->nombre}}</td>
             <td>{{$grupo->licenciatura->nombre}}</td>
             <td>{{$grupo->cuatrimestre}}</td>

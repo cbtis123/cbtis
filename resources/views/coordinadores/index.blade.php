@@ -8,7 +8,6 @@
     <table class="table table-bordered table-striped table-hover" id="mi_tabla">
       <thead>
         <tr>
-          <td>id</td>
           <td>Nombrembre</td>
           <td>Apellidno P</td>
           <td>Apellido M</td>
@@ -29,7 +28,6 @@
 
         @foreach ($coordinadores as $coordinador)
           <tr>
-            <td>{{$coordinador->id}}</td>
             <td>{{$coordinador->nombre}}</td>
             <td>{{$coordinador->apellido_p}}</td>
             <td>{{$coordinador->apellido_m}}</td>
