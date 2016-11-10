@@ -28,11 +28,10 @@ class GruposController extends Controller
     public function create()
     {
         $licenciaturas= Licenciatura::orderBy('nombre','ASC')->pluck('nombre','id');
-        $profesores=Profesor::orderBy('nombre', 'ASC')->pluck('nombre','id');
         //Se crea un objeto vacio del modelo grupo
         $grupo= new Grupo;
         //Se manda a llamar la vista create y le pasamos el objeto vacio que creamos con el modelo grupo
-        return view('grupos.create')->with('grupo',$grupo)->with('licenciaturas',$licenciaturas)->with('profesores',$profesores);
+        return view('grupos.create')->with('grupo',$grupo)->with('licenciaturas',$licenciaturas);
     }
 
     /**
@@ -48,7 +47,7 @@ class GruposController extends Controller
         //Mandamos a guaradar la nueva grupo creada
         $grupo->save();
         //mandamos un mensaje de registro exitoso
-        flash('Se ha registrado el alumno '.$alumno->nombre.' con exito!!','success');
+        flash('Se ha registrado el grupo '.$grupo->nombre.' con exito!!','success');
         //Redireccionamos al index
         return redirect()->route('grupos.index');
     }
@@ -73,11 +72,10 @@ class GruposController extends Controller
     public function edit($id)
     {
         $licenciaturas= Licenciatura::orderBy('nombre','ASC')->pluck('nombre','id');
-        $profesores=Profesor::orderBy('nombre', 'ASC')->pluck('nombre','id');
         //Buscamos la grupo que queremos modificar con el modelo grupo y con el parametro ID que rescibimos
         $grupo = Grupo::find($id);
         //Mandamos a llamar la vista edit y le mandamos la grupo que extragimos de la base mediante el model grupo
-        return view('grupos.edit')->with('grupo',$grupo)->with('licenciaturas',$licenciaturas)->with('profesores',$profesores);
+        return view('grupos.edit')->with('grupo',$grupo)->with('licenciaturas',$licenciaturas);
     }
 
     /**
@@ -92,8 +90,7 @@ class GruposController extends Controller
         //Se declara la validacion
         $this->validate($request, [
             'nombre' => 'required|unique:grupos,nombre,'."$id",
-            'especialidad_id' => 'required',
-            'profesor_id' => 'required',
+            'licenciatura_id' => 'required',
             'cuatrimestre' => 'required',
             'turno' => 'required'
             ]);
@@ -104,7 +101,7 @@ class GruposController extends Controller
         //Guardamos la grupo con los campos ya modificados
         $grupo->save();
         //Redireccionamos al index
-        flash('Se ha actualizado el alumno '.$alumno->nombre.' con exito!!','success');
+        flash('Se ha actualizado el grupo '.$grupo->nombre.' con exito!!','success');
         return redirect()->route('grupos.index');
     }
 
