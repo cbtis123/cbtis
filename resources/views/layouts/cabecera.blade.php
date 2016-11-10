@@ -5,12 +5,14 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/ieso.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('bower_components/DataTables/media/css/jquery.dataTables.min.css') }}">
+	<link href="{{ asset('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 	
-		<title>@yield('title', 'Default')| Panel de Administracion\</title>
+		<title>@yield('title', '') | Panel de Administracion\</title>
 	</head>
 	<body>
-		
+		@include('layouts.navbar')
 		<header>
+
 			<div class="container">
 				<div class="row">
 
@@ -30,7 +32,8 @@
 			
 			
 		</header>
-		@include('layouts.navbar')
+		
+
 		<div class="container">
 			
 			@include('flash::message')

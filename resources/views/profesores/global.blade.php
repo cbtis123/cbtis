@@ -20,7 +20,7 @@
 <div class='form-group row'>
    {!!Form::label('fecha_n','Fecha_n',['class'=>'control-label col-xs-12 col-md-1'])!!}
    <div class="col-xs-12 col-md-10">   
-      {!!Form::text('fecha_n',$profesor->fecha_n,['class'=>'form-control','placeholder'=>'fecha de nacimiento'])!!}
+      {!!Form::date('fecha_n',$profesor->fecha_n,['class'=>'form-control','placeholder'=>'fecha de nacimiento'])!!}
    </div>
 </div>
 <div class='form-group row'>

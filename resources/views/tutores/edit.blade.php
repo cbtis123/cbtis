@@ -2,6 +2,6 @@
 @section('title','Editar Tutor')
 @section('content')
   <div class='container'>
- @include('tutores.global',['ruta'=>['tutores.update',$tutor],'accion'=>'PUT','tutoor'=>$tutor])
+ @include('tutores.global',['ruta'=>['tutores.update',$tutor],'accion'=>'PUT','tutor'=>$tutor])
   </div>
-@endsection('content')
+@endsection
