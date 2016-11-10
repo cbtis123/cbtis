@@ -42,6 +42,8 @@ class MateriasController extends Controller
         $materia = new Materia($request->all());
         //Mandamos a guaradar la nueva materia creada
         $materia->save();
+        //Mandamos un mensaje de registro exitoso
+        flash('Se ha registrado la Materia '.$materia->nombre.' con exito!!','success');
         //Redireccionamos al index
         return redirect()->route('materias.index');
     }
@@ -91,6 +93,8 @@ class MateriasController extends Controller
         $materia->fill($request->all());
         //Guardamos la materia con los campos ya modificados
         $materia->save();
+        //mostramos un mensaje de registro exitoso
+        flash('Se ha actualizado la Materia '.$materia->nombre.' con exito!!','success');
         //Redireccionamos al index
         return redirect()->route('materias.index');
     }
@@ -106,6 +110,7 @@ class MateriasController extends Controller
         //Buscamos y eliminaos la materia que seleccionamos
         Materia::destroy($id);
         //Redireccionamos al index
+         flash('Se ha eliminado la Materia con exito!!','danger');
         return redirect()->route('materias.index');
     }
 }

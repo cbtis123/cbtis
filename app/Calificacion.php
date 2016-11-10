@@ -26,6 +26,6 @@ class Calificacion extends Model
 
 	//Se declara la relacion muchos a uno con horarios "Una calificacion solo puede tener un horario "
 	public function horario(){
-		return $this->belongsTo('App\Profesor');
+		return $this->belongsTo('App\Horario');
 	}
  }

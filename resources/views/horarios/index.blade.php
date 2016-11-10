@@ -21,6 +21,7 @@
         </tr>
       <thead>
       <tbody>
+
         @foreach($horarios as $horario)
           <tr>
 

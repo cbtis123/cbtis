@@ -27,12 +27,12 @@ class GruposController extends Controller
      */
     public function create()
     {
-        $especialidades= Especialidad::orderBy('nombre','ASC')->pluck('nombre','id');
+        $licenciaturas= Licenciatura::orderBy('nombre','ASC')->pluck('nombre','id');
         $profesores=Profesor::orderBy('nombre', 'ASC')->pluck('nombre','id');
         //Se crea un objeto vacio del modelo grupo
         $grupo= new Grupo;
         //Se manda a llamar la vista create y le pasamos el objeto vacio que creamos con el modelo grupo
-        return view('grupos.create')->with('grupo',$grupo)->with('especialidades',$especialidades)->with('profesores',$profesores);
+        return view('grupos.create')->with('grupo',$grupo)->with('licenciaturas',$licenciaturas)->with('profesores',$profesores);
     }
 
     /**
@@ -47,6 +47,8 @@ class GruposController extends Controller
         $grupo = new Grupo($request->all());
         //Mandamos a guaradar la nueva grupo creada
         $grupo->save();
+        //mandamos un mensaje de registro exitoso
+        flash('Se ha registrado el alumno '.$alumno->nombre.' con exito!!','success');
         //Redireccionamos al index
         return redirect()->route('grupos.index');
     }
@@ -102,6 +104,7 @@ class GruposController extends Controller
         //Guardamos la grupo con los campos ya modificados
         $grupo->save();
         //Redireccionamos al index
+        flash('Se ha actualizado el alumno '.$alumno->nombre.' con exito!!','success');
         return redirect()->route('grupos.index');
     }
 
@@ -116,6 +119,7 @@ class GruposController extends Controller
         //Buscamos y eliminaos la grupo que seleccionamos
         Grupo::destroy($id);
         //Redireccionamos al index
+        flash('Se ha eliminado el Grupo con exito!!','danger');
         return redirect()->route('grupos.index');
     }
 }

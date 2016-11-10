@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Calificacion;
 use App\Alumno;
-use App\Materia;
+use App\Horario;
 use App\Http\Requests;
 use App\Http\Requests\CalificacionRequest;
 
@@ -27,12 +27,13 @@ class CalificacionesController extends Controller
      */
     public function create()
     {
+      //relacion orario en modelo
         $alumno= Alumno::orderBy('nombre','ASC')->pluck('nombre','id');
-        $materia= Materia::orderBy('nombre','ASC')->pluck('nombre','id');
+        $horario= Horario::orderBy('id','ASC')->pluck('id','id');
         //Se crea un objeto vacio del modelo calificacion
         $calificacion= new Calificacion;
         //Se manda a llamar la vista create y le pasamos el objeto vacio que creamos con el modelo calificacion
-        return view('calificaciones.create')->with('calificacion',$calificacion)->with('alumno',$alumno)->with('materia',$materia);
+        return view('calificaciones.create')->with('calificacion',$calificacion)->with('alumno',$alumno)->with('horario',$horario);
     }
 
     /**
@@ -47,6 +48,8 @@ class CalificacionesController extends Controller
         $calificacion = new Calificacion($request->all());
         //Mandamos a guaradar la nueva calificacion creada
         $calificacion->save();
+        //Mandamos un mensaje de registro exitoso
+        flash('Se ha registrado la calificacion '.$calificacion->alumno_id.' con exito!!','success');
         //Redireccionamos al index
         return redirect()->route('calificaciones.index');
     }
@@ -97,6 +100,7 @@ class CalificacionesController extends Controller
         //Guardamos la calificacion con los campos ya modificados
         $calificacion->save();
         //Redireccionamos al index
+        flash('Se ha actualizado la calificación '.$calificacion->alumno_id.' con exito!!','success');
         return redirect()->route('calificaciones.index');
     }
 
@@ -111,6 +115,7 @@ class CalificacionesController extends Controller
         //Buscamos y eliminaos la calificacion que seleccionamos
         Calificacion::destroy($id);
         //Redireccionamos al index
+        flash('Se ha eliminado la calificación con exito!!','danger');
         return redirect()->route('calificaciones.index');
     }
 }

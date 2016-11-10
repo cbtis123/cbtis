@@ -18,6 +18,7 @@
         </tr>
       <thead>
       <tbody>
+
         @foreach ($calificaciones as $calificacion)
           <tr>
             <td>{{$calificacion->id}}</td>

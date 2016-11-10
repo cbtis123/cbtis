@@ -18,13 +18,9 @@ class CreateTutoresTable extends Migration
             $table->string('nombre');
             $table->string('apellido_p');
             $table->string('apellido_m');
-            $table->dateTime('fecha_n');
+            $table->date('fecha_n');
             $table->string('curp');
             $table->string('estado_c');
-            $table->integer('clave_en');
-            $table->integer('clave_mn');
-            $table->integer('clave_mv');
-            $table->integer('clave_lv');
             $table->string('colonia');
             $table->string('calle');
             $table->integer('cp');

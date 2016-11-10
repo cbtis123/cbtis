@@ -5,11 +5,17 @@
       {!!Form::text('nombre',$grupo->nombre,['class'=>'form-control','placeholder'=>'nombre'])!!}
     </div>
   </div>
+<<<<<<< HEAD
+  <div class='group'>
+     {!!Form::label('licenciatura_id','Licenciatura')!!}
+     {!!Form::select('licenciatura_id',$licenciaturas,['class'=>'form-control','placeholder'=>'nombre'])!!}
+=======
   <div class='form-group row'>
     {!!Form::label('especialidad_id','especialidad_id',['class'=>'control-label col-xs-12 col-md-1'])!!}
     <div class="col-xs-12 col-md-10">
       {!!Form::select('especialidad_id',$licenciaturas,['class'=>'form-control','placeholder'=>'nombre'])!!}
     </div>
+>>>>>>> origin/master
   </div>
   <div class='form-group row'>
     {!!Form::label('profesor_id','profesor_profesor_id',['class'=>'control-label col-xs-12 col-md-1'])!!}

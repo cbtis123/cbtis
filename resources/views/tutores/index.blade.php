@@ -13,10 +13,6 @@
           <td>Fecha de Nacimiento</td>
           <td>CURP</td>
           <td>Estado Civil</td>
-          <td>Clave_en</td>
-          <td>Clave_mn</td>
-          <td>Clave_mv</td>
-          <td>Clave_lv</td>
           <td>Colonia</td>
           <td>Calle</td>
           <td>CP</td>
@@ -37,10 +33,6 @@
             <td>{{$tutor->fecha_n}}</td>
             <td>{{$tutor->curp}}</td>
             <td>{{$tutor->estado_c}}</td>
-            <td>{{$tutor->clave_en}}</td>
-            <td>{{$tutor->clave_mn}}</td>
-            <td>{{$tutor->clave_mv}}</td>
-            <td>{{$tutor->clave_lv}}</td>
             <td>{{$tutor->colonia}}</td>
             <td>{{$tutor->calle}}</td>
             <td>{{$tutor->cp}}</td>

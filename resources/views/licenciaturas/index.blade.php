@@ -13,6 +13,7 @@
         </tr>
       <thead>
       <tbody>
+
         @foreach ($licenciaturas as $licenciatura)
           <tr>
             <td>{{$licenciatura->id}}</td>

@@ -50,6 +50,8 @@ class LicenciaturasController extends Controller
         $licenciatura = new Licenciatura($request->all());
         //Mandamos a guaradar la nueva licenciatura creada
         $licenciatura->save();
+        //mandamos un mensaje de registro exitoso
+        flash('Se ha registrado la Licenciatura '.$licenciatura->nombre.' con exito!!','success');
         //Redireccionamos al index
         return redirect()->route('licenciaturas.index');
     }
@@ -99,6 +101,7 @@ class LicenciaturasController extends Controller
         //Guardamos la licenciatura con los campos ya modificados
         $licenciatura->save();
         //Redireccionamos al index
+        flash('Se ha actualizado la Licenciatura '.$licenciatura->nombre.' con exito!!','success');
         return redirect()->route('licenciaturas.index');
     }
 
@@ -113,6 +116,7 @@ class LicenciaturasController extends Controller
         //Buscamos y eliminaos la licenciatura que seleccionamos
         Licenciatura::destroy($id);
         //Redireccionamos al index
+        flash('Se ha eliminado la Licenciatura con exito!!','danger');
         return redirect()->route('licenciaturas.index');
     }
 }

@@ -45,6 +45,8 @@ class TutoresController extends Controller
         $tutor = new Tutor($request->all());
         //Mandamos a guaradar la nueva tutor creada
         $tutor->save();
+        //mandamos un mensaje de registro exitoso
+        flash('Se ha registrado el Tutor '.$tutor->nombre.' con exito!!','success');
         //Redireccionamos al index
         return redirect()->route('tutores.index');
     }
@@ -90,6 +92,8 @@ class TutoresController extends Controller
         $tutor->fill($request->all());
         //Guardamos la tutor con los campos ya modificados
         $tutor->save();
+        //agregamos un mensaje de registro exitoso
+        flash('Se ha actualizado la Materia '.$materia->nombre.' con exito!!','success');
         //Redireccionamos al index
         return redirect()->route('tutores.index');
     }
@@ -105,6 +109,7 @@ class TutoresController extends Controller
         //Buscamos y eliminaos la tutor que seleccionamos
         Tutor::destroy($id);
         //Redireccionamos al index
+        flash('Se ha eliminado el alumno con exito!!','danger');
         return redirect()->route('tutores.index');
     }
 }

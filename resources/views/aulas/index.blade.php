@@ -13,6 +13,7 @@
         </tr>
       <thead>
       <tbody>
+
         @foreach ($aulas as $aula)
           <tr>
             <td>{{$aula->id}}</td>

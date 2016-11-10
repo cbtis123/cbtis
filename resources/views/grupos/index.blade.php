@@ -17,6 +17,7 @@
         </tr>
       <thead>
       <tbody>
+
         @foreach ($grupos as $grupo)
           <tr>
             <td>{{$grupo->id}}</td>
