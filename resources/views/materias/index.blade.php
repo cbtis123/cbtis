@@ -1,7 +1,7 @@
 @extends('layouts.cabecera')
+@section('title','Materias')
 @section('content')
-<h1 class="tablatitulo" align="center">Materias</h1>
-<div class="container">
+  <a href="{{route('materias.create')}}" class="btn btn-success"><span class="glyphicon glyphicon-plus">Nuevo</span> </a>
   <div class="table-responsive">
     <table  class="table table-bordered table-striped table-hover" id="mi_tabla">
       <thead>
@@ -13,7 +13,6 @@
         </tr>
       <thead>
       <tbody>
-       <a href="{{route('materias.create')}}"><span class="glyphicon glyphicon-plus">Nuevo</span> </a>
         @foreach ($materias as $materia)
           <tr>
             <td>{{$materia->id}}</td>
@@ -31,5 +30,4 @@
       </tbody>
     </table>
   </div>
-</div>
 @endsection
