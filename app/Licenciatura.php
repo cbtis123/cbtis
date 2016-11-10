@@ -25,7 +25,9 @@ class Licenciatura extends Model
      public function alumnos(){
         return $this->hasMany('App\Alumno');
      }
-
+     public function coordinador(){
+        return $this->hasOne('App\Coordinador');
+     }
     //Se declara la relacion uno a muchos "Una especialidad puede tener muchos grupos"
      public function grupos(){
         return $this->hasMany('App\Grupo');

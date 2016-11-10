@@ -26,7 +26,17 @@ class HorarioRequest extends FormRequest
         return [
             //
         'grupo_id' => 'required',
-        'materia_id' => 'required'
+        'profesor_id' => 'required',
+        'lunes_i' => 'required',
+        'lunes_f' => 'required',
+        'martes_i' => 'required',
+        'martes_f' => 'required',
+        'miercoles_i' => 'required',
+        'miercoles_f' => 'required',
+        'jueves_i' => 'required',
+        'jueves_f' => 'required',
+        'viernes_i' => 'required',
+        'viernes_f' => 'required',
         ];
     }
 }

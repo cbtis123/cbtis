@@ -94,7 +94,7 @@
          '19:30:00'=>'19:30',
          '20:20:00'=>'20:20'],
          $horario->lunes_i,
-         ['class'=>'form-control','placeholder'=>''])!!}
+         ['class'=>'form-control','placeholder'=>'Hora de inicio'])!!}
          
    </div>
    
@@ -119,7 +119,7 @@
          '18:40:00'=>'18:40',
          '19:30:00'=>'19:30',
          '20:20:00'=>'20:20'],
-         $horario->lunes_f,['class'=>'form-control','placeholder'=>''])!!}
+         $horario->lunes_f,['class'=>'form-control','placeholder'=>'Hora que termina'])!!}
    </div>
 </div>
 
@@ -147,7 +147,7 @@
          '19:30:00'=>'19:30',
          '20:20:00'=>'20:20'],
          $horario->martes_i,
-         ['class'=>'form-control','placeholder'=>' '])!!}
+         ['class'=>'form-control','placeholder'=>'Hora de inicio'])!!}
          
    </div>
    
@@ -172,7 +172,7 @@
          '18:40:00'=>'18:40',
          '19:30:00'=>'19:30',
          '20:20:00'=>'20:20'],
-         $horario->martes_f,['class'=>'form-control','placeholder'=>''])!!}
+         $horario->martes_f,['class'=>'form-control','placeholder'=>'Hora que termina'])!!}
    </div>
 </div>
 
@@ -200,7 +200,7 @@
          '19:30:00'=>'19:30',
          '20:20:00'=>'20:20'],
          $horario->miercoles_i,
-         ['class'=>'form-control','placeholder'=>' '])!!}
+         ['class'=>'form-control','placeholder'=>'Hora de inicio'])!!}
          
    </div>
    
@@ -225,7 +225,7 @@
          '18:40:00'=>'18:40',
          '19:30:00'=>'19:30',
          '20:20:00'=>'20:20'],
-         $horario->miercoles_f,['class'=>'form-control','placeholder'=>''])!!}
+         $horario->miercoles_f,['class'=>'form-control','placeholder'=>'Hora que termina'])!!}
    </div>
 </div>
 
@@ -253,7 +253,7 @@
          '19:30:00'=>'19:30',
          '20:20:00'=>'20:20'],
          $horario->jueves_i,
-         ['class'=>'form-control','placeholder'=>' '])!!}
+         ['class'=>'form-control','placeholder'=>'Hora de inicio'])!!}
          
    </div>
    
@@ -278,7 +278,7 @@
          '18:40:00'=>'18:40',
          '19:30:00'=>'19:30',
          '20:20:00'=>'20:20'],
-         $horario->jueves_f,['class'=>'form-control','placeholder'=>''])!!}
+         $horario->jueves_f,['class'=>'form-control','placeholder'=>'Hora que termina'])!!}
    </div>
 </div>
 
@@ -306,7 +306,7 @@
          '19:30:00'=>'19:30',
          '20:20:00'=>'20:20'],
          $horario->viernes_i,
-         ['class'=>'form-control','placeholder'=>' '])!!}
+         ['class'=>'form-control','placeholder'=>'Hora de inicio'])!!}
          
    </div>
    
@@ -331,7 +331,7 @@
          '18:40:00'=>'18:40',
          '19:30:00'=>'19:30',
          '20:20:00'=>'20:20'],
-         $horario->viernes_f,['class'=>'form-control','placeholder'=>''])!!}
+         $horario->viernes_f,['class'=>'form-control','placeholder'=>'Hora que termina'])!!}
    </div>
 </div>
 

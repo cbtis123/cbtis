@@ -3,6 +3,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Coordinador;
+use App\Licenciatura;
+use App\Http\Requests\CoordinadorRequest;
+
 
 class CoordinadoresController extends Controller
 {
@@ -21,10 +24,11 @@ class CoordinadoresController extends Controller
    */
   public function create()
   {
+      $licenciaturas= Licenciatura::orderBy('nombre','ASC')->pluck('nombre','id');
       //Se crea un objeto vacio del modelo coordinador
       $coordinador= new Coordinador;
       //Se manda a llamar la vista create y le pasamos el objeto vacio que creamos con el modelo coordinador
-      return view('coordinadores.create')->with('coordinador',$coordinador);
+      return view('coordinadores.create')->with('coordinador',$coordinador)->with('licenciaturas',$licenciaturas);
   }
 
   /**
@@ -64,10 +68,11 @@ class CoordinadoresController extends Controller
    */
   public function edit($id)
   {
+      $licenciaturas= Licenciatura::orderBy('nombre','ASC')->pluck('nombre','id');
       //Buscamos la coordinador que queremos modificar con el modelo coordinador y con el parametro ID que rescibimos
       $coordinador = Coordinador::find($id);
       //Mandamos a llamar la vista edit y le mandamos la coordinador que extragimos de la base mediante el model coordinador
-      return view('coordinadores.edit')->with('coordinador',$coordinador);
+      return view('coordinadores.edit')->with('coordinador',$coordinador)->with('licenciaturas',$licenciaturas);
   }
 
   /**
