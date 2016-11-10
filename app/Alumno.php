@@ -35,7 +35,7 @@ class Alumno extends Model
 
      //Se declara la relacion con los horarios muchos a muchos "Un alumno puede tener muchas horas de clase"
      public function horarios(){
-        return $this->hasManyThrought('App\Horarios','App\Grupo');
+        return $this->hasManyThrought('App\Horario','App\Grupo');
      }
 
      /*Se declara la relacion del alumno con los profesores "un alunmno puede tener muchos profesores"

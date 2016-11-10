@@ -11,7 +11,7 @@ class Horario extends Model
 		protected $table='horarios';
     /*Declarocion de los datos que se pueden editar
     */
-    protected $fillable=['aula_id','grupo_id','materia_id','professor_id','lunes_i','lunes_f','martes_i','martes_f','miercoles_i','miercoles_f','jueves_i','jueves_f','viernes_i','viernes_f'];
+    protected $fillable=['aula_id','grupo_id','materia_id','profesor_id','lunes_i','lunes_f','martes_i','martes_f','miercoles_i','miercoles_f','jueves_i','jueves_f','viernes_i','viernes_f'];
 
     //Se declaran las relaciones
 

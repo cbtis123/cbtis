@@ -30,37 +30,38 @@
 			
 			
 		</header>
-
 		@include('layouts.navbar')
-		@include('flash::message')
-		
-		<div class="panel panel-default">
-	    	<div class= "panel-heading">
-	    		<h1 class="panel-title">@yield('title')</h1>
-	    	</div>
-
-			<div class="panel-body">
-				<div class="container-fluid">
-					<div class="row">
-						
-						<div class="col-xs-12">
-							@if(count($errors)>0)
-						<div class="alert alert-danger" role="alert">
-							<ul>
-								@foreach($errors->all() as $error)
-									<li> {{ $error }}</li>
-								@endforeach
-							</ul>	
-						</div>		
-					@endif
-					
-					@yield('content')	
-						</div>
-					</div>
-				</div>	 
-			</div>
-		</div>		
+		<div class="container">
 			
+			@include('flash::message')
+			
+			<div class="panel panel-primary">
+		    	<div class= "panel-heading">
+		    		<h1 class="panel-title">@yield('title')</h1>
+		    	</div>
+
+				<div class="panel-body">
+					<div class="container-">
+						<div class="row">
+							
+							<div class="col-xs-12">
+								@if(count($errors)>0)
+							<div class="alert alert-danger" role="alert">
+								<ul>
+									@foreach($errors->all() as $error)
+										<li> {{ $error }}</li>
+									@endforeach
+								</ul>	
+							</div>		
+						@endif
+						
+						@yield('content')	
+							</div>
+						</div>
+					</div>	 
+				</div>
+			</div>		
+		</div>
 	</body>
 	<script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
 	<script src="{{ asset('js/ieso.js') }}"></script>
