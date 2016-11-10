@@ -22,10 +22,6 @@ class CreateProfesoresTable extends Migration
             $table->string('curp');
             $table->integer('horas');
             $table->string('estado_c');
-            $table->integer('clave_en');
-            $table->integer('clave_mn');
-            $table->integer('clave_mv');
-            $table->integer('clave_lv');
             $table->string('colonia');
             $table->string('calle');
             $table->integer('cp');
@@ -34,8 +30,8 @@ class CreateProfesoresTable extends Migration
             $table->timestamps();
         });
 
-        
-        
+
+
     }
 
     /**

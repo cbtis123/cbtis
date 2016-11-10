@@ -38,6 +38,11 @@ class Horario extends Model
     	return $this->belongsTo('App\Profesor');
     }
 
+		//Se declara la relacion muchos a uno con horarios "Una calificacion solo puede tener un horario "
+		public function calificaciones(){
+			return $this->hasMany('App\Calificacion');
+		}
+
     public static function DetalleHorario(){
         $horarios = Horario::join('aulas','aulas.id','=','horarios.aula_id')
         ->join('grupos','grupos.id','=','horarios.grupo_id')

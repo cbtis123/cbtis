@@ -36,30 +36,6 @@
    </div>
 </div>
 <div class='form-group row'>
-   {!!Form::label('clave_en','Clave_en',['class'=>'control-label col-xs-12 col-md-1'])!!}
-   <div class="col-xs-12 col-md-10">
-      {!!Form::text('clave_en',$alumno->clave_en,['class'=>'form-control','placeholder'=>'clave'])!!}
-   </div>
-</div>
-<div class='form-group row'>
-   {!!Form::label('clave_mn','Clave_mn',['class'=>'control-label col-xs-12 col-md-1'])!!}
-   <div class="col-xs-12 col-md-10">
-      {!!Form::text('clave_mn',$alumno->clave_mn,['class'=>'form-control','placeholder'=>'clave'])!!}
-   </div>
-</div>
-<div class='form-group row'>
-   {!!Form::label('clave_mv','Clave_mv',['class'=>'control-label col-xs-12 col-md-1'])!!}
-   <div class="col-xs-12 col-md-10">
-      {!!Form::text('clave_mv',$alumno->clave_mv,['class'=>'form-control','placeholder'=>'clave'])!!}
-   </div>
-</div>
-<div class='form-group row'>
-   {!!Form::label('Clave_lv','Clave_lv',['class'=>'control-label col-xs-12 col-md-1'])!!}
-   <div class="col-xs-12 col-md-10">
-      {!!Form::text('clave_lv',$alumno->clave_lv,['class'=>'form-control','placeholder'=>'clave'])!!}
-   </div>
-</div>
-<div class='form-group row'>
    {!!Form::label('colonia','Colonia',['class'=>'control-label col-xs-12 col-md-1'])!!}
    <div class="col-xs-12 col-md-10">
       {!!Form::text('colonia',$alumno->colonia,['class'=>'form-control','placeholder'=>'Colonia'])!!}

@@ -24,22 +24,6 @@
    {!!Form::text('estado_c',$coordinador->estado_c,['class'=>'form-control','placeholder'=>'Estado civil'])!!}
 </div>
 <div class='group'>
-   {!!Form::label('clave_en','Clave_en')!!}
-   {!!Form::text('clave_en',$coordinador->clave_en,['class'=>'form-control','placeholder'=>'clave'])!!}
-</div>
-<div class='group'>
-   {!!Form::label('clave_mn','Clave_mn')!!}
-   {!!Form::text('clave_mn',$coordinador->clave_mn,['class'=>'form-control','placeholder'=>'clave'])!!}
-</div>
-<div class='group'>
-   {!!Form::label('clave_mv','Clave_mv')!!}
-   {!!Form::text('clave_mv',$coordinador->clave_mv,['class'=>'form-control','placeholder'=>'clave'])!!}
-</div>
-<div class='group'>
-   {!!Form::label('Clave_lv','Clave_lv')!!}
-   {!!Form::text('clave_lv',$coordinador->clave_lv,['class'=>'form-control','placeholder'=>'clave'])!!}
-</div>
-<div class='group'>
    {!!Form::label('colonia','Colonia')!!}
    {!!Form::text('colonia',$coordinador->colonia,['class'=>'form-control','placeholder'=>'Colonia'])!!}
 </div>

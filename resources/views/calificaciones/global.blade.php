@@ -4,8 +4,8 @@
    {!!Form::select('alumno_id',$alumno,['class'=>'form-control','placeholder'=>'nombre'])!!}
 </div>
 <div class='group'>
-   {!!Form::label('materia_id','materia_id')!!}
-   {!!Form::select('horario_id',$materia,['class'=>'form-control','placeholder'=>'nombre'])!!}
+   {!!Form::label('horario_id','Horario')!!}
+   {!!Form::select('horario_id',$horario,['class'=>'form-control','placeholder'=>'nombre'])!!}
 </div>
 <div class='group'>
    {!!Form::label('profesor_id','Parcial 1')!!}

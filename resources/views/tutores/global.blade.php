@@ -13,7 +13,7 @@
 </div>
 <div class='group'>
    {!!Form::label('fecha_n','Fecha_n')!!}
-   {!!Form::text('fecha_n',$tutor->fecha_n,['class'=>'form-control','placeholder'=>'fecha de nacimiento'])!!}
+   {!!Form::date('fecha_n',$tutor->fecha_n,['class'=>'form-control','placeholder'=>'fecha de nacimiento'])!!}
 </div>
 <div class='group'>
    {!!Form::label('curp','CURP')!!}
@@ -22,22 +22,6 @@
 <div class='group'>
    {!!Form::label('estado_c','Estado_c')!!}
    {!!Form::text('estado_c',$tutor->estado_c,['class'=>'form-control','placeholder'=>'Estado civil'])!!}
-</div>
-<div class='group'>
-   {!!Form::label('clave_en','Clave_en')!!}
-   {!!Form::text('clave_en',$tutor->clave_en,['class'=>'form-control','placeholder'=>'clave'])!!}
-</div>
-<div class='group'>
-   {!!Form::label('clave_mn','Clave_mn')!!}
-   {!!Form::text('clave_mn',$tutor->clave_mn,['class'=>'form-control','placeholder'=>'clave'])!!}
-</div>
-<div class='group'>
-   {!!Form::label('clave_mv','Clave_mv')!!}
-   {!!Form::text('clave_mv',$tutor->clave_mv,['class'=>'form-control','placeholder'=>'clave'])!!}
-</div>
-<div class='group'>
-   {!!Form::label('Clave_lv','Clave_lv')!!}
-   {!!Form::text('clave_lv',$tutor->clave_lv,['class'=>'form-control','placeholder'=>'clave'])!!}
 </div>
 <div class='group'>
    {!!Form::label('colonia','Colonia')!!}

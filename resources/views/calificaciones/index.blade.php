@@ -1,7 +1,7 @@
 @extends('layouts.cabecera')
+@section('title','Calificaciones')
 @section('content')
-<h1>Calificaciones</h1>
-<div class="conteiner">
+  <a href="{{route('calificaciones.create')}}" class="btn btn-success"><span class="glyphicon glyphicon-plus">Nuevo</span> </a>
   <div class="table-responsive">
     <table  class="table table-bordered table-striped table-hover" id="mi_tabla">
       <thead>
@@ -18,7 +18,7 @@
         </tr>
       <thead>
       <tbody>
-        <a href="{{route('calificaciones.create')}}" class="btn btn-success"><span class="glyphicon glyphicon-plus">Nuevo</span> </a>
+
         @foreach ($calificaciones as $calificacion)
           <tr>
             <td>{{$calificacion->id}}</td>
@@ -42,5 +42,4 @@
       </tbody>
     </table>
   </div>
-</div>
 @endsection

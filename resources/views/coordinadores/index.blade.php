@@ -1,6 +1,8 @@
 @extends('layouts.cabecera')
 @section('content')
-<h1>Profesores</h1>
+@section('title','Coordinadores')
+<a href="{{route('coordinadores.create')}}" class="btn btn-success"><span class="glyphicon glyphicon-plus">Nuevo</span> </a>
+<h1>Coordinadores</h1>
 <div class="conteiner">
   <div class="table-responsive">
     <table class="table table-bordered table-striped table-hover" id="mi_tabla">
@@ -13,10 +15,6 @@
           <td>Fecha de Nacimiento</td>
           <td>CURP</td>
           <td>Estado Civil</td>
-          <td>Clave_en</td>
-          <td>Clave_mn</td>
-          <td>Clave_mv</td>
-          <td>Clave_lv</td>
           <td>Colonia</td>
           <td>Calle</td>
           <td>CP</td>
@@ -28,7 +26,7 @@
         </tr>
       <thead>
       <tbody>
-        <a href="{{route('coordinadores.create')}}" class="btn btn-success"><span class="glyphicon glyphicon-plus">Nuevo</span> </a>
+
         @foreach ($coordinadores as $coordinador)
           <tr>
             <td>{{$coordinador->id}}</td>
@@ -38,10 +36,6 @@
             <td>{{$coordinador->fecha_n}}</td>
             <td>{{$coordinador->curp}}</td>
             <td>{{$coordinador->estado_c}}</td>
-            <td>{{$coordinador->clave_en}}</td>
-            <td>{{$coordinador->clave_mn}}</td>
-            <td>{{$coordinador->clave_mv}}</td>
-            <td>{{$coordinador->clave_lv}}</td>
             <td>{{$coordinador->colonia}}</td>
             <td>{{$coordinador->calle}}</td>
             <td>{{$coordinador->cp}}</td>

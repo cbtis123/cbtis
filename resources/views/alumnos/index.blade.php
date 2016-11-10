@@ -1,7 +1,7 @@
 @extends('layouts.cabecera')
 @section('title','Alumnos')
 @section('content')
-<div class="container-fluid">
+  <a href="{{route('alumnos.create')}}" class="btn btn-success"><span class="glyphicon glyphicon-plus">Nuevo</span> </a>
   <div class="table-responsive">
     <table class="table table-bordered table-hover" id="mi_tabla">
       <thead>
@@ -17,7 +17,7 @@
         </tr>
       <thead>
       <tbody>
-       <a href="{{route('alumnos.create')}}" class="btn btn-success"><span class="glyphicon glyphicon-plus">Nuevo</span> </a>
+       
         @foreach ($alumnos as $alumno)
           <tr>
             <td>{{$alumno->id}}</td>
@@ -39,5 +39,4 @@
       </tbody>
     </table>
   </div>
-</div>
 @endsection
