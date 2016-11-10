@@ -32,7 +32,7 @@
 <div class='form-group row'>
    {!!Form::label('estado_c','Estado Civil',['class'=>'control-label col-xs-12 col-md-1'])!!}
    <div class="col-xs-12 col-md-10">
-      {!!Form::select('estado_c',['soltero' => 'soltero','casado' => 'casado'],$alumno->esstado_c,['class'=>'form-control select-category','placeholder'=>' '])!!}
+      {!!Form::select('estado_c',['soltero' => 'soltero','casado' => 'casado'],$alumno->estado_c,['class'=>'form-control select-category','placeholder'=>' '])!!}
    </div>
 </div>
 <div class='form-group row'>

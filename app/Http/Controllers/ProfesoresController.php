@@ -106,7 +106,7 @@ class ProfesoresController extends Controller
         //Buscamos y eliminaos la profesor que seleccionamos
         Profesor::destroy($id);
       //agrregamos un mensaje de eliminacion exitoso
-        flash('Se ha eliminado el alumno con exito!!','danger');
+        flash('Se ha eliminado el Profesor con exito!!','danger');
           //Redireccionamos al index
         return redirect()->route('profesores.index');
     }
