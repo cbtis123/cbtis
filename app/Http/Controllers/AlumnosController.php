@@ -51,7 +51,7 @@ class AlumnosController extends Controller
         //Redireccionamos al index
         return redirect()->route('alumnos.index');
     }
-
+    
     /**
      * Display the specified resource.
      *

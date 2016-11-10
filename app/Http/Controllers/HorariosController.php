@@ -97,7 +97,7 @@ class HorariosController extends Controller
     public function update(HorarioRequest $request, $id)
     {
         //Buscamos la horario que vamos a asignar los nuevos valores con el modelo horario y find
-        $horarios= Horario::find($id);
+        $horario= Horario::find($id);
         //Vaciamos los atributos modificados con fill al registro ya existente
         $horario->fill($request->all());
         //Guardamos la horario con los campos ya modificados
