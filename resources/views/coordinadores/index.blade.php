@@ -2,7 +2,6 @@
 @section('content')
 @section('title','Coordinadores')
 <a href="{{route('coordinadores.create')}}" class="btn btn-success"><span class="glyphicon glyphicon-plus">Nuevo</span> </a>
-<h1>Coordinadores</h1>
 <div class="conteiner">
   <div class="table-responsive">
     <table class="table table-bordered table-striped table-hover" id="mi_tabla">
