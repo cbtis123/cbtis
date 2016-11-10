@@ -42,6 +42,8 @@ class AulasController extends Controller
         $aula = new Aula($request->all());
         //Mandamos a guaradar la nueva aula creada
         $aula->save();
+        //Mandamos un mensaje de registro exitoso
+        flash('Se ha registrado el aula '.$aula->nombre.' con exito!!','success');
         //Redireccionamos al index
         return redirect()->route('aulas.index');
     }
@@ -91,6 +93,7 @@ class AulasController extends Controller
         //Guardamos la aula con los campos ya modificados
         $aula->save();
         //Redireccionamos al index
+        flash('Se ha actualizado el aula '.$aula->nombre.' con exito!!','success');
         return redirect()->route('aulas.index');
     }
 
@@ -105,6 +108,7 @@ class AulasController extends Controller
         //Buscamos y eliminaos la aula que seleccionamos
         Aula::destroy($id);
         //Redireccionamos al index
+        flash('Se ha eliminado el aula con exito!!','danger');
         return redirect()->route('aulas.index');
     }
 }

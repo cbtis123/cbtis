@@ -52,6 +52,8 @@ class HorariosController extends Controller
         $horario = new Horario($request->all());
         //Mandamos a guaradar la nueva horario creada
         $horario->save();
+        //mandamos un mensaje de registro exitoso
+        flash('Se ha registrado el Horario '.$horario->id.' con exito!!','success');
         //Redireccionamos al index
         return redirect()->route('horarios.index');
     }
@@ -101,6 +103,7 @@ class HorariosController extends Controller
         //Guardamos la horario con los campos ya modificados
         $horario->save();
         //Redireccionamos al index
+        flash('Se ha actualizado el Horario '.$horario->id.' con exito!!','success');
         return redirect()->route('horarios.index');
     }
 
@@ -115,6 +118,7 @@ class HorariosController extends Controller
         //Buscamos y eliminaos la horario que seleccionamos
         Horario::destroy($id);
         //Redireccionamos al index
+        flash('Se ha eliminado el Horario con exito!!','danger');
         return redirect()->route('horarios.index');
     }
 }

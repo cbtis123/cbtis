@@ -43,6 +43,8 @@ class ProfesoresController extends Controller
         $profesor = new Profesor($request->all());
         //Mandamos a guaradar la nueva profesor creada
         $profesor->save();
+        //mandamos un mensaje de registro exitoso
+        flash('Se ha registrado el Profesor '.$profesor->nombre.' con exito!!','success');
         //Redireccionamos al index
         return redirect()->route('profesores.index');
     }
@@ -88,6 +90,7 @@ class ProfesoresController extends Controller
         //Guardamos la profesor con los campos ya modificados
         $profesor->save();
         //Redireccionamos al index
+        flash('Se ha actualizado el Profesor '.$profesor->nombre.' con exito!!','success');
         return redirect()->route('profesores.index');
     }
 
@@ -102,6 +105,7 @@ class ProfesoresController extends Controller
         //Buscamos y eliminaos la profesor que seleccionamos
         Profesor::destroy($id);
         //Redireccionamos al index
+        flash('Se ha eliminado el alumno con exito!!','danger');
         return redirect()->route('profesores.index');
     }
 }

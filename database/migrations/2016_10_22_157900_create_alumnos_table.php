@@ -34,7 +34,6 @@ class CreateAlumnosTable extends Migration
             $table->enum('cuatrimestre',['1','2','3','4','5','6','7','8','9','10']);
             $table->integer('grupo_id')->unsigned()->nullable();
             $table->enum('status',['regular','resagado'])->default('regular');
-
             $table->foreign('licenciatura_id')->references('id')->on('licenciaturas')->onDelete('cascade');
             $table->foreign('grupo_id')->references('id')->on('grupos')->onDelete('cascade');
             $table->timestamps();

@@ -27,6 +27,7 @@
 			  <li><a href="{{ url('/tutores') }}">Tutores</a></li>
 			  <li><a href="{{ url('/horarios') }}">Horarios</a></li>
 			  <li><a href="{{ url('/calificaciones') }}">Califiacion</a></li>
+			  <li><a href="{{ url('/coordinadores') }}">Coordinadores</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->

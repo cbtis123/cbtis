@@ -47,6 +47,8 @@ class CalificacionesController extends Controller
         $calificacion = new Calificacion($request->all());
         //Mandamos a guaradar la nueva calificacion creada
         $calificacion->save();
+        //Mandamos un mensaje de registro exitoso
+        flash('Se ha registrado la calificacion '.$calificacion->alumno_id.' con exito!!','success');
         //Redireccionamos al index
         return redirect()->route('calificaciones.index');
     }
@@ -97,6 +99,7 @@ class CalificacionesController extends Controller
         //Guardamos la calificacion con los campos ya modificados
         $calificacion->save();
         //Redireccionamos al index
+        flash('Se ha actualizado la calificación '.$calificacion->alumno_id.' con exito!!','success');
         return redirect()->route('calificaciones.index');
     }
 
@@ -111,6 +114,7 @@ class CalificacionesController extends Controller
         //Buscamos y eliminaos la calificacion que seleccionamos
         Calificacion::destroy($id);
         //Redireccionamos al index
+        flash('Se ha eliminado la calificación con exito!!','danger');
         return redirect()->route('calificaciones.index');
     }
 }

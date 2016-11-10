@@ -104,6 +104,7 @@ class TutoresController extends Controller
         //Buscamos y eliminaos la tutor que seleccionamos
         Tutor::destroy($id);
         //Redireccionamos al index
+        flash('Se ha eliminado el alumno con exito!!','danger');
         return redirect()->route('tutores.index');
     }
 }
