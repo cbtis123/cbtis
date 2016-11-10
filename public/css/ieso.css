@@ -4,5 +4,29 @@ header {
 	 /*gradiente*/
 	background-image: url("../images/degradado.png");
     background-repeat: repeat-x;
+    margin-bottom: 20px;
+    margin-top: 50px;
 }
 
+.nomargen{
+	margin-bottom: 0;
+}
+
+.panel-primary {
+  border-color: #FF562F;
+}
+.panel-primary > .panel-heading {
+  color: #fff;
+  background-color: #FF562F;
+  border-color: #FF562F;
+}
+.panel-primary > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #FCAB37;
+}
+.panel-primary > .panel-heading .badge {
+  color: #337ab7;
+  background-color: #fff;
+}
+.panel-primary > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #337ab7;
+}

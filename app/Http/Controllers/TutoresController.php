@@ -70,10 +70,11 @@ class TutoresController extends Controller
      */
     public function edit($id)
     {
+        $alumnos=Alumno::orderBy('nombre','ASC')->pluck('nombre','id');
         //Buscamos la tutor que queremos modificar con el modelo tutor y con el parametro ID que rescibimos
         $tutor = Tutor::find($id);
         //Mandamos a llamar la vista edit y le mandamos la tutor que extragimos de la base mediante el model tutor
-        return view('tutores.edit')->with('tutor',$tutor);
+        return view('tutores.edit')->with('tutor',$tutor)->with('alumnos',$alumnos);
     }
 
     /**

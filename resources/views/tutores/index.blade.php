@@ -38,9 +38,9 @@
             <td>{{$tutor->cp}}</td>
             <td>{{$tutor->telefono_c}}</td>
             <td>{{$tutor->celular}}</td>
-            <td>{{$tutor->alumno_id}}</td>
+            <td>{{$tutor->alumno->nombre}}</td>
             <td>
-              <a href="{{route('materias.edit',$tutor)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span> </a>
+              <a href="{{route('tutores.edit',$tutor)}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span> </a>
             </td>
 
            <td>

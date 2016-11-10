@@ -15,7 +15,9 @@ class Tutor extends Model
       Se declara las relaciones que tiene con otras tablas
     */
 
-
+      public function alumno(){
+        return $this->belongsTo('App\Alumno');
+     }
      //Se de clara relacion muchos a muchos con materias, llamando al modelo Materia
 
 }
