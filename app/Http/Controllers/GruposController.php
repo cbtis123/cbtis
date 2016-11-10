@@ -27,12 +27,12 @@ class GruposController extends Controller
      */
     public function create()
     {
-        $especialidades= Especialidad::orderBy('nombre','ASC')->pluck('nombre','id');
+        $licenciaturas= Licenciatura::orderBy('nombre','ASC')->pluck('nombre','id');
         $profesores=Profesor::orderBy('nombre', 'ASC')->pluck('nombre','id');
         //Se crea un objeto vacio del modelo grupo
         $grupo= new Grupo;
         //Se manda a llamar la vista create y le pasamos el objeto vacio que creamos con el modelo grupo
-        return view('grupos.create')->with('grupo',$grupo)->with('especialidades',$especialidades)->with('profesores',$profesores);
+        return view('grupos.create')->with('grupo',$grupo)->with('licenciaturas',$licenciaturas)->with('profesores',$profesores);
     }
 
     /**

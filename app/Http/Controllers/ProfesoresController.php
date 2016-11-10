@@ -89,8 +89,9 @@ class ProfesoresController extends Controller
         $profesor->fill($request->all());
         //Guardamos la profesor con los campos ya modificados
         $profesor->save();
-        //Redireccionamos al index
+        //mostramos un mensaje de registro exitoso
         flash('Se ha actualizado el Profesor '.$profesor->nombre.' con exito!!','success');
+        //Redireccionamos al index
         return redirect()->route('profesores.index');
     }
 
@@ -104,8 +105,9 @@ class ProfesoresController extends Controller
     {
         //Buscamos y eliminaos la profesor que seleccionamos
         Profesor::destroy($id);
-        //Redireccionamos al index
+      //agrregamos un mensaje de eliminacion exitoso
         flash('Se ha eliminado el alumno con exito!!','danger');
+          //Redireccionamos al index
         return redirect()->route('profesores.index');
     }
 }

@@ -28,7 +28,7 @@
         </tr>
       <thead>
       <tbody>
-        <a href="{{route('alumnos.create')}}" class="btn btn-success"><span class="glyphicon glyphicon-plus">Nuevo</span> </a>
+        <a href="{{route('coordinadores.create')}}" class="btn btn-success"><span class="glyphicon glyphicon-plus">Nuevo</span> </a>
         @foreach ($coordinadores as $coordinador)
           <tr>
             <td>{{$coordinador->id}}</td>

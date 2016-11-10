@@ -4,8 +4,8 @@
      {!!Form::text('nombre',$grupo->nombre,['class'=>'form-control','placeholder'=>'nombre'])!!}
   </div>
   <div class='group'>
-     {!!Form::label('especialidad_id','especialidad_id')!!}
-     {!!Form::select('especialidad_id',$licenciaturas,['class'=>'form-control','placeholder'=>'nombre'])!!}
+     {!!Form::label('licenciatura_id','Licenciatura')!!}
+     {!!Form::select('licenciatura_id',$licenciaturas,['class'=>'form-control','placeholder'=>'nombre'])!!}
   </div>
   <div class='group'>
      {!!Form::label('profesor_id','profesor_profesor_id')!!}

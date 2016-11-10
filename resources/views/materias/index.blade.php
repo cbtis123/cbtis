@@ -13,7 +13,7 @@
         </tr>
       <thead>
       <tbody>
-        <a href="{{route('alumnos.create')}}" class="btn btn-success"><span class="glyphicon glyphicon-plus">Nuevo</span> </a>
+        <a href="{{route('materias.create')}}" class="btn btn-success"><span class="glyphicon glyphicon-plus">Nuevo</span> </a>
         @foreach ($materias as $materia)
           <tr>
             <td>{{$materia->id}}</td>
