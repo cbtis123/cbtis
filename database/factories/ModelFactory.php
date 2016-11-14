@@ -23,9 +23,9 @@ use App\User;
 
 $factory->define(User::class, function(Generator $faker){
 	return[
-					 'nombre'=>$faker->firstName($gender = 'male'|'female'),
+					 'name'=>$faker->firstName($gender = 'male'|'female'),
 		       'email'=>$faker->email,
-					 'pasword'=>$faker-> str_random(10),
+					 'password'=>bcrypt('secret'),
 					 'type'=> $faker->randomElement($array = array ('Admin','Profesor','Coordinador','Grupo','Administrativo')),
 				];
 
