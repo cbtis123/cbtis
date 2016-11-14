@@ -7,6 +7,7 @@ use App\Tutor;
 use App\Grupo;
 use App\Horario;
 use App\Coordinador;
+use App\User;
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -18,12 +19,22 @@ use App\Coordinador;
 |
 */
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+/** @var \Illuminate\Database\Eloquent\Fac-tory $factory */
 
+$factory->define(User::class, function(Generator $faker){
+	return[
+					 'nombre'=>$faker->firstName($gender = 'male'|'female'),
+		       'email'=>$faker->email,
+					 'pasword'=>$faker-> str_random(10),
+					 'type'=> $faker->randomElement($array = array ('Admin','Profesor','Coordinador','Grupo','Administrativo')),
+				];
+
+});
 
 $factory->define(Profesor::class, function(Generator $faker){
 	return [
-			'nombre' => $faker->firstName($gender = 'male'|'female'),
+						'matricula' =>$faker->numberBetween($min = 60000, $max = 70000),
+						'nombre'=> $faker->firstName($gender = 'male'|'female'),
             'apellido_p' => $faker->lastname,
             'apellido_m' => $faker->lastname,
             'fecha_n' => $faker->date($format = 'y-m-d', $max = 'now') ,
@@ -34,7 +45,8 @@ $factory->define(Profesor::class, function(Generator $faker){
             'calle' => $faker->randomElement($array = array ('Murgia','Abasolo','Colon','Independencia','Hidalgo','Guerrero','5 de mayo')).' '.$faker->numberBetween($min = 90, $max = 500),
             'cp' => $faker->numberBetween($min = 60000, $max = 70000),
             'telefono_c' =>$faker->tollFreePhoneNumber ,
-            'celular' => $faker->tollFreePhoneNumber
+            'celular' => $faker->tollFreePhoneNumber,
+						'user_id'=> $faker->numberBetween($min = 8, $max = 12)
             ];
 
 });
@@ -45,7 +57,8 @@ $factory->define(Grupo::class, function(Generator $faker){
             'nombre' => $faker->randomElement($array = array ('ISC','LA','LD','LP')).'-'.$faker->numberBetween($min = 100, $max =200),
             'licenciatura_id' => $faker->numberBetween($min = 1, $max = 6),
             'cuatrimestre' => $faker->numberBetween($min = 1, $max = 10),
-            'turno' => $faker->randomElement($array = array ('Matutino','Vespertino'))
+            'turno' => $faker->randomElement($array = array ('Matutino','Vespertino')),
+						'user_id'=> $faker->numberBetween($min = 8, $max = 12),
             ];
 
 });
@@ -73,7 +86,8 @@ $factory->define(Horario::class, function(Generator $faker){
 
 $factory->define(Alumno::class, function(Generator $faker){
       return [
-                  'nombre' => $faker->firstName($gender = 'male'|'female'),
+						'matricula' =>$faker->numberBetween($min = 60000, $max = 70000),
+            'nombre' => $faker->firstName($gender = 'male'|'female'),
             'apellido_p' => $faker->lastname,
             'apellido_m' => $faker->lastname,
             'fecha_n' => $faker->date($format = 'y-m-d', $max = 'now') ,
@@ -111,7 +125,8 @@ $factory->define(Tutor::class, function(Generator $faker){
 
 $factory->define(Coordinador::class, function(Generator $faker){
       return [
-                  'nombre' => $faker->firstName($gender = 'male'|'female'),
+						'matricula' =>$faker->numberBetween($min = 60000, $max = 70000),
+            'nombre' => $faker->firstName($gender = 'male'|'female'),
             'apellido_p' => $faker->lastname,
             'apellido_m' => $faker->lastname,
             'fecha_n' => $faker->date($format = 'y-m-d', $max = 'now') ,
@@ -122,7 +137,8 @@ $factory->define(Coordinador::class, function(Generator $faker){
             'cp' => $faker->numberBetween($min = 60000, $max = 70000),
             'telefono_c' =>$faker->tollFreePhoneNumber ,
             'celular' => $faker->tollFreePhoneNumber,
-            'licenciatura_id'=>$faker->numberBetween($min = 1, $max = 9)
+            'licenciatura_id'=>$faker->numberBetween($min = 1, $max = 9),
+						'user_id'=> $faker->numberBetween($min = 8, $max = 12),
             ];
 
 });

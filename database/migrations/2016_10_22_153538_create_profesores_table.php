@@ -15,6 +15,7 @@ class CreateProfesoresTable extends Migration
     {
         Schema::create('profesores', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('matricula');
             $table->string('nombre');
             $table->string('apellido_p');
             $table->string('apellido_m');
@@ -27,6 +28,8 @@ class CreateProfesoresTable extends Migration
             $table->integer('cp');
             $table->string('telefono_c');
             $table->string('celular');
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
 

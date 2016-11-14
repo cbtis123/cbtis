@@ -11,7 +11,7 @@ class Alumno extends Model
     /*Declarocion de los datos que se pueden editar
     Nombre,Apellido paterno, Apellido materno, Fecha de nacimiento, Curp
     */
-    protected $fillable=['nombre','apellido_p','apellido_m','fecha_n','curp','estado_c','clave_en','clave_mn','clave_mv','clave_lv','colonia','calle','cp','telefono_c','celular','licenciatura_id','cuatrimestre','grupo_id','status'];
+    protected $fillable=['matricula','nombre','apellido_p','apellido_m','fecha_n','curp','estado_c','clave_en','clave_mn','clave_mv','clave_lv','colonia','calle','cp','telefono_c','celular','licenciatura_id','cuatrimestre','grupo_id','status'];
 
     //Se declara relacion muchos a muchos con materias, llamando al modelo Materia "un alumno puede tener muchas calificaciones"
      public function calificaciones(){

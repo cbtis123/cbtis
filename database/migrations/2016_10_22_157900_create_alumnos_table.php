@@ -12,9 +12,10 @@ class CreateAlumnosTable extends Migration
      * @return void
      */
     public function up()
-    {
+    { //userid
         Schema::create('alumnos', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('matricula');
             $table->string('nombre');
             $table->string('apellido_p');
             $table->string('apellido_m');

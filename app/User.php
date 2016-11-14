@@ -26,4 +26,17 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    //Se declara la relacion uno a uno con Usuario "Un usuario solo puede pertenecer a un grupo"
+    public function coordinador(){
+       return $this->hasOne('App\Coordinador');
+    }
+    public function Grupo(){
+       return $this->hasOne('App\Grupo');
+    }
+    public function Profesor(){
+       return $this->hasOne('App\Profesor');
+    }
+
+
 }

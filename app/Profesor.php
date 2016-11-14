@@ -9,7 +9,7 @@ class Profesor extends Model
     //Se delcara la tabla de la base de datos en la que se va a trabajar
     protected $table='profesores';
     //Se definen los campos con los que se van a trabajar(Agregar,Editar,Eliminar,ostrar)
-    protected $fillable=['nombre','apellido_p','apellido_m','fecha_n','curp','horas','estado_c','clave_en','clave_mn','clave_mv','clave_lv','colonia','calle','cp','telefono_c','celular'];
+    protected $fillable=['matricula','nombre','apellido_p','apellido_m','fecha_n','curp','horas','estado_c','clave_en','clave_mn','clave_mv','clave_lv','colonia','calle','cp','telefono_c','celular','user_id'];
 
     /*
       Se declara las relaciones que tiene con otras tablas
@@ -40,6 +40,12 @@ class Profesor extends Model
     public function ascesorados(){
         return $this->hasMany('App\Grupo');
     }
+
+    //Se declara la relacion uno a uno con Usuario "Un usuario solo puede pertenecer a un grupo"
+    public function user(){
+       return $this->hasOne('App\User');
+    }
+
 
 
 }
