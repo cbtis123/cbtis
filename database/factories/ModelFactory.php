@@ -23,11 +23,11 @@ use App\User;
 
 $factory->define(User::class, function(Generator $faker){
 	return[
-					 'name'=>$faker->firstName($gender = 'male'|'female'),
-		       'email'=>$faker->email,
-					 'password'=>bcrypt(1234),
-					 'type'=> $faker->randomElement($array = array ('Admin','Profesor','Coordinador','Grupo','Administrativo')),
-				];
+		'name'=>$faker->firstName($gender = 'male'|'female'),
+		'email'=>$faker->email,
+            'password'=>bcrypt('secret'),
+            'type'=> $faker->randomElement($array = array ('Admin','Profesor','Coordinador','Grupo','Administrativo')),
+		];
 
 });
 
