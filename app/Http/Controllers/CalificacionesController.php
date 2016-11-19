@@ -17,7 +17,7 @@ class CalificacionesController extends Controller
         //Se manda a llamar todas las calificaciones que existen en la tabla 'calificaciones' mediante el modelo calificacion
         $calificaciones = Calificacion::all();
         //Se manda a llamar la vista index y le pasamos la lista de usuarios que obtuvimos mediante el modelo calificacion
-        return view('calificaciones.index')->with('calificaciones',$calificaciones);
+        return view('calificaciones.index')->with('calificaciones',$calificaciones)->with('calificaciones',$calificaciones);
     }
 
     /**
@@ -27,9 +27,10 @@ class CalificacionesController extends Controller
      */
     public function create()
     {
+
       //relacion orario en modelo
         $alumno= Alumno::orderBy('nombre','ASC')->pluck('nombre','id');
-        $horario= Horario::orderBy('id','ASC')->pluck('id','id');
+        $horario= Horario::MateriaHorario();
         //Se crea un objeto vacio del modelo calificacion
         $calificacion= new Calificacion;
         //Se manda a llamar la vista create y le pasamos el objeto vacio que creamos con el modelo calificacion
@@ -43,9 +44,11 @@ class CalificacionesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(CalificacionRequest $request)
-    {
+    {   
+
         //Creamos un prodcuto nuevo con el modelo calificacion y lo rellenamos con los datos que ingresa el usuario
         $calificacion = new Calificacion($request->all());
+        $calificacion->user_id = \Auth::user()->id;
         //Mandamos a guaradar la nueva calificacion creada
         $calificacion->save();
         //Mandamos un mensaje de registro exitoso

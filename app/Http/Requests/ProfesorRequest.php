@@ -25,9 +25,8 @@ class ProfesorRequest extends FormRequest
     {
         return [
             //
+            'matricula' => 'required|max:100',
             'nombre' => 'required|max:100',
-            'apellido_p' => 'required|max:100',
-            'apellido_m' => 'required|max:100',
             'fecha_n' => 'required|date_format:"Y-m-d"',
             'curp' => 'required|max:18|min:18',
             'horas' => 'required',

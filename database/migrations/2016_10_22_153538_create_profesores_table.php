@@ -17,8 +17,6 @@ class CreateProfesoresTable extends Migration
             $table->increments('id');
             $table->string('matricula');
             $table->string('nombre');
-            $table->string('apellido_p');
-            $table->string('apellido_m');
             $table->date('fecha_n');
             $table->string('curp');
             $table->integer('horas');

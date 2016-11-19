@@ -1,20 +1,14 @@
 {!!Form::open(['route'=>$ruta,'method'=>$accion]) !!}
 <div class='form-group row'>
+   {!!Form::label('matricula','Matricula',['class'=>'control-label col-xs-12 col-md-1'])!!}
+   <div class="col-xs-12 col-md-10">
+      {!!Form::text('matricula',$profesor->matricula,['class'=>'form-control','placeholder'=>'Escriba la Matricula'])!!}
+   </div>
+</div>
+<div class='form-group row'>
    {!!Form::label('nombre','Nombre',['class'=>'control-label col-xs-12 col-md-1'])!!}
    <div class="col-xs-12 col-md-10">
       {!!Form::text('nombre',$profesor->nombre,['class'=>'form-control','placeholder'=>'escribe el nombre'])!!}
-   </div>
-</div>
-<div class='form-group row'>
-   {!!Form::label('apellido_p','Apellido Paterno',['class'=>'control-label col-xs-12 col-md-1'])!!}
-   <div class="col-xs-12 col-md-10">
-      {!!Form::text('apellido_p',$profesor->apellido_p,['class'=>'form-control','placeholder'=>'apellido paterno'])!!}
-   </div>
-</div>
-<div class='form-group row'>
-   {!!Form::label('apellido_m','Apellido Materno',['class'=>'control-label col-xs-12 col-md-1'])!!}
-   <div class="col-xs-12 col-md-10">
-      {!!Form::text('apellido_m',$profesor->apellido_m,['class'=>'form-control','placeholder'=>'apellido materno'])!!}
    </div>
 </div>
 <div class='form-group row'>

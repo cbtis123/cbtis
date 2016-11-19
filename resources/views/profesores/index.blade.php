@@ -6,6 +6,7 @@
     <table class="table table-bordered table-striped table-hover" id="mi_tabla">
       <thead>
         <tr>
+          <td>Matricula</td>
           <td>Nombre</td>
           <td>CURP</td>
           <td>Horas</td>
@@ -17,7 +18,8 @@
       <tbody>
         @foreach ($profesores as $profesor)
           <tr>
-            <td>{{$profesor->nombre}} {{$profesor->apellido_p}}} {{$profesor->apellido_m}}}</td>
+            <td>{{$profesor->matricula}}</td>
+            <td>{{$profesor->nombre}}</td>
             <td>{{$profesor->curp}}</td>
             <td>{{$profesor->horas}}</td>
             <td>{{$profesor->estado_c}}</td>

@@ -6,28 +6,28 @@
     <table  class="table table-bordered table-striped table-hover" id="mi_tabla">
       <thead>
         <tr>
-          <td>Alumno_id</td>
-          <td>Materia_id</td>
-          <td>Profesor_id</td>
+          <td>Alumno</td>
+          <td>Materia</td>
           <td>Parcial 1</td>
           <td>Parcial 2</td>
-          <td>Parcial 2</td>
-          <td>Parcial 3</td>
+          <td>Ordinario</td>
           <td>Promedio</td>
+          <td>Firma</td>
+          <td>Editar</td>
+          <td>Eliminar</td>
         </tr>
       <thead>
       <tbody>
 
         @foreach ($calificaciones as $calificacion)
           <tr>
-            <td>{{$calificacion->alumno_id}}</td>
-            <td>{{$calificacion->materia_id}}</td>
-            <td>{{$calificacion->profesor_id}}</td>
+            <td>{{$calificacion->alumno->nombre}}</td>
+            <td>{{$calificacion->horario->materia->nombre}}</td>
             <td>{{$calificacion->parcial1}}</td>
             <td>{{$calificacion->parcial2}}</td>
-            <td>{{$calificacion->parcial3}}</td>
+            <td>{{$calificacion->ordinario}}</td>
             <td>{{$calificacion->promedio}}</td>
-
+            <td>{{$calificacion->user->name}}</td>
             <td>
               <a href="{{route('calificaciones.destroy',$calificacion->id)}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span> </a>
             </td>

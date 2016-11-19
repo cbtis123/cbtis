@@ -21,7 +21,6 @@ class CreateLicenciaturasTable extends Migration
 
         DB::table('licenciaturas')->insert([
     ['nombre' => 'Psicología'],
-    ['nombre' => 'Ingeniería en sistemas computacionales'],
     ['nombre' => 'Pedagogía'],
     ['nombre' => 'Ciencias y Técnicas de la Comunicación'],
     ['nombre' => 'Ingenieria en Sistemas Computacionales'],

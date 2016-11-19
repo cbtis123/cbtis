@@ -68,4 +68,30 @@ class Horario extends Model
         return $horarios;
     }
 
+    public static function MateriaHorario(){
+        $horarios = Horario::join('aulas','aulas.id','=','horarios.aula_id')
+        ->join('grupos','grupos.id','=','horarios.grupo_id')
+        ->join('materias','materias.id','=','horarios.materia_id')
+        ->join('profesores','profesores.id','=','horarios.profesor_id')
+        ->orderBy('id','ASC')
+        ->get([
+            'horarios.id',
+            'aulas.nombre as aula',
+            'grupos.nombre as grupo',
+            'materias.nombre as materia',
+            'profesores.nombre as profesor',
+            'horarios.lunes_i',
+            'horarios.lunes_f',
+            'horarios.martes_i',
+            'horarios.martes_f',
+            'horarios.miercoles_i',
+            'horarios.miercoles_f',
+            'horarios.jueves_i',
+            'horarios.jueves_f',
+            'horarios.viernes_i',
+            'horarios.viernes_f',
+            ])
+        ->pluck('materia','id');
+        return $horarios;
+    }
 }

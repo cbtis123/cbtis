@@ -6,9 +6,7 @@
     <table  class="table table-bordered table-striped table-hover" id="mi_tabla">
       <thead>
         <tr>
-          <td>Nombrembre</td>
-          <td>Apellidno P</td>
-          <td>Apellido M</td>
+          <td>Nombre</td>
           <td>Fecha de Nacimiento</td>
           <td>CURP</td>
           <td>Estado Civil</td>
@@ -17,7 +15,7 @@
           <td>CP</td>
           <td>Telefono_C</td>
           <td>Celular</td>
-          <td>alumno_id</td>
+          <td>Tutorado</td>
           <td>Editar</td>
           <td>Eliminar</td>
         </tr>
@@ -26,8 +24,6 @@
         @foreach ($tutores as $tutor)
           <tr>
             <td>{{$tutor->nombre}}</td>
-            <td>{{$tutor->apellido_p}}</td>
-            <td>{{$tutor->apellido_m}}</td>
             <td>{{$tutor->fecha_n}}</td>
             <td>{{$tutor->curp}}</td>
             <td>{{$tutor->estado_c}}</td>

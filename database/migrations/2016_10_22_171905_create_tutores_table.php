@@ -16,8 +16,6 @@ class CreateTutoresTable extends Migration
         Schema::create('tutores', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->string('apellido_p');
-            $table->string('apellido_m');
             $table->date('fecha_n');
             $table->string('curp');
             $table->string('estado_c');

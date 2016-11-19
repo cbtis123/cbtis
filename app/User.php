@@ -28,6 +28,9 @@ class User extends Authenticatable
     ];
 
     //Se declara la relacion uno a uno con Usuario "Un usuario solo puede pertenecer a un grupo"
+    public function calificaciones(){
+       return $this->hasMany('App\Calificacion');
+    }
     public function coordinador(){
        return $this->hasOne('App\Coordinador');
     }

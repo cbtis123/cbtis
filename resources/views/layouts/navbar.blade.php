@@ -22,6 +22,7 @@
 				  	<li><a href="{{ url('/aulas') }}" ><i class="fa fa-book" aria-hidden="true"></i> Aulas</a></li>
 				  	<li><a href="{{ url('/licenciaturas') }}"><i class="fa fa-book" aria-hidden="true"></i> Licenciaturas</a></li>
 				  	<li><a href="{{ url('/grupos') }}"><i class="fa fa-book" aria-hidden="true"></i> Grupos</a></li>
+				  	<li><a href="{{ url('/calificaciones') }}"><i class="fa fa-book" aria-hidden="true"></i> Califiaciones</a></li>
 				  </ul>
 
 
@@ -32,10 +33,10 @@
 
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ url('/usuarios') }}">Usuarios</a></li>
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

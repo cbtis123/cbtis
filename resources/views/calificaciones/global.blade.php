@@ -1,23 +1,23 @@
 {!!Form::open(['route'=>$ruta,'method'=>$accion]) !!}
 <div class='group'>
-   {!!Form::label('alumno_id','alumno_id')!!}
+   {!!Form::label('alumno_id','Alumno')!!}
    {!!Form::select('alumno_id',$alumno,['class'=>'form-control','placeholder'=>'nombre'])!!}
 </div>
 <div class='group'>
-   {!!Form::label('horario_id','Horario')!!}
+   {!!Form::label('materia','Materia')!!}
    {!!Form::select('horario_id',$horario,['class'=>'form-control','placeholder'=>'nombre'])!!}
 </div>
 <div class='group'>
-   {!!Form::label('profesor_id','Parcial 1')!!}
+   {!!Form::label('Parcial 1','Parcial 1')!!}
    {!!Form::text('parcial1',$calificacion->parcial1,['class'=>'form-control','placeholder'=>'nombre'])!!}
 </div>
 <div class='group'>
-   {!!Form::label('nombre','Parcial 2')!!}
+   {!!Form::label('Parcial 2','Parcial 2')!!}
    {!!Form::text('parcial2',$calificacion->parcial2,['class'=>'form-control','placeholder'=>'nombre'])!!}
 </div>
 <div class='group'>
-   {!!Form::label('parcial2','Parcial 3')!!}
-   {!!Form::text('parcial3',$calificacion->parcial3,['class'=>'form-control','placeholder'=>'nombre'])!!}
+   {!!Form::label('ordinario','Ordinario')!!}
+   {!!Form::text('ordinario',$calificacion->ordinario,['class'=>'form-control','placeholder'=>'nombre'])!!}
 </div>
 <div class='group'>
    {!!Form::label('promedio','Promedio')!!}

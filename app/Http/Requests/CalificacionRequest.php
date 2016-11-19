@@ -26,7 +26,10 @@ class CalificacionRequest extends FormRequest
         return [
             //
         'alumno_id' => 'required',
-        'horario_id' => 'required|unique:horarios,horario_id'
+        'horario_id' => 'required',
+        'parcial1' => 'required|integer|between:0,10',
+        'parcial2' => 'required|integer|between:0,10',
+        'ordinario' => 'required|integer|between:0,10'
         ];
     }
 }

@@ -6,18 +6,6 @@
    </div>
 </div>
 <div class='form-group row'>
-   {!!Form::label('apellido_p','Apellido Paterno',['class'=>'control-label col-xs-12 col-md-1'])!!}
-   <div class="col-xs-12 col-md-10">
-      {!!Form::text('apellido_p',$tutor->apellido_p,['class'=>'form-control','placeholder'=>'apellido paterno'])!!}
-   </div>
-</div>
-<div class='form-group row'>
-   {!!Form::label('apellido_m','Apellido Materno',['class'=>'control-label col-xs-12 col-md-1'])!!}
-   <div class="col-xs-12 col-md-10">
-      {!!Form::text('apellido_m',$tutor->apellido_m,['class'=>'form-control','placeholder'=>'apellido materno'])!!}
-   </div>
-</div>
-<div class='form-group row'>
    {!!Form::label('fecha_n','Fecha de Nacimiento',['class'=>'control-label col-xs-12 col-md-1'])!!}
    <div class="col-xs-12 col-md-10">
       {!!Form::date('fecha_n',$tutor->fecha_n,['class'=>'form-control','placeholder'=>'fecha de nacimiento'])!!}

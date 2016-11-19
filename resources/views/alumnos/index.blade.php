@@ -6,6 +6,7 @@
     <table class="table table-bordered table-hover" id="mi_tabla">
       <thead>
         <tr>
+          <td>Matricula</td>
           <td>Nombre</td>
           <td>cuatrimestre</td>
           <td>Grupo</td>
@@ -19,7 +20,8 @@
 
         @foreach ($alumnos as $alumno)
           <tr>
-            <td>{{$alumno->apellido_p}} {{$alumno->apellido_m}} {{$alumno->nombre}}</td>
+            <td>{{$alumno->matricula}}</td>
+            <td>{{$alumno->nombre}}</td>
             <td>{{$alumno->cuatrimestre}}</td>
             <td>{{$alumno->grupo->nombre}}</td>
             <td>{{$alumno->licenciatura->nombre}}</td>

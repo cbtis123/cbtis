@@ -7,12 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Calificacion extends Model
 {
     //Se declara la tabla con la cual va a trabajar el model
-	protected $table= 'Calificaciones';
+	protected $table= 'calificaciones';
     /*Declarocion de los datos que se pueden editar
     Nombre
     */
-    protected $fillable=['alumno_id','horario_id','parcial1','parcial2','parcial3','promedio'];
+    protected $fillable=['alumno_id','horario_id','parcial1','parcial2','ordinario','promedio'];
 
+
+    public function user(){
+		return $this->belongsTo('App\User');
+	}
 
     //Se de clara relacion muchos a muchos con materias, llamando al modelo Materia
 	public function alumno(){
